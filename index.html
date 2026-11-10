@@ -70,7 +70,48 @@ section {
   grid-template-columns: 1fr 1fr;
   gap: 15px;
 }
+/* CINEMATIC GALLERY */
+#gallery h2 {
+  text-align: center;
+  letter-spacing: 3px;
+}
 
+#gallery > p {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.gallery {
+  gap: 20px;
+}
+
+.gallery .photo {
+  height: 320px;
+  border: 1px solid #8c6470;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.35);
+}
+
+.gallery .photo:nth-child(3),
+.gallery .photo:nth-child(4) {
+  grid-column: span 2;
+  height: 420px;
+}
+
+.gallery .photo img {
+  transition: transform 0.6s ease;
+}
+
+.gallery .photo:hover img {
+  transform: scale(1.05);
+}
+
+@media(max-width: 600px) {
+  .gallery .photo:nth-child(3),
+  .gallery .photo:nth-child(4) {
+    grid-column: span 1;
+    height: 280px;
+  }
+}
 .photo {
   height: 280px;
   background: linear-gradient(145deg, #572536, #251820);
