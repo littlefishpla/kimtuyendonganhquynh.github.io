@@ -202,10 +202,10 @@ footer {
 
   <div class="people">
     <div class="photo">
-      <img src="images/kimtuyen1.jpg" alt="Kim Tuyến">
+      <img src="images/kimtuyen1.jpg" alt="Kim Tuyến" onclick="openLightbox(this)">
     </div>
     <div class="photo">
-      <img src="images/daq1.jpg" alt="Đồng Ánh Quỳnh">
+      <img src="images/daq1.jpg" alt="Đồng Ánh Quỳnh" onclick="openLightbox(this)">
     </div>
   </div>
 </section>
@@ -216,16 +216,16 @@ footer {
 
   <div class="gallery">
     <div class="photo">
-      <img src="images/kimtuyen2.jpg" alt="Kim Tuyến">
+      <img src="images/kimtuyen2.jpg" alt="Kim Tuyến" onclick="openLightbox(this)">
     </div>
     <div class="photo">
-      <img src="images/daq2.jpg" alt="Đồng Ánh Quỳnh">
+      <img src="images/daq2.jpg" alt="Đồng Ánh Quỳnh" onclick="openLightbox(this)">
     </div>
     <div class="photo">
-      <img src="images/couple1.jpg" alt="Kim Tuyến và Đồng Ánh Quỳnh">
+      <img src="images/couple1.jpg" alt="Kim Tuyến và Đồng Ánh Quỳnh" onclick="openLightbox(this)">
     </div>
     <div class="photo">
-      <img src="images/couple2.jpg" alt="Kim Tuyến và Đồng Ánh Quỳnh">
+      <img src="images/couple2.jpg" alt="Kim Tuyến và Đồng Ánh Quỳnh" onclick="openLightbox(this)">
     </div>
   </div>
 </section>
@@ -271,34 +271,23 @@ footer {
   <img id="lightboxImage" src="" alt="Ảnh phóng to">
 </div>
 
-<!-- JAVASCRIPT -->
 <script>
-const lightbox = document.getElementById("lightbox");
-const lightboxImage = document.getElementById("lightboxImage");
-const closeButton = document.getElementById("lightboxClose");
+function openLightbox(img) {
+  document.getElementById("lightboxImage").src = img.src;
+  document.getElementById("lightbox").classList.add("active");
+}
 
-document.querySelectorAll(".photo img").forEach(img => {
-  img.addEventListener("click", () => {
-    lightboxImage.src = img.src;
-    lightbox.classList.add("active");
-  });
-});
+function closeLightbox() {
+  document.getElementById("lightbox").classList.remove("active");
+}
 
-closeButton.addEventListener("click", () => {
-  lightbox.classList.remove("active");
-});
-
-lightbox.addEventListener("click", event => {
-  if (event.target === lightbox) {
-    lightbox.classList.remove("active");
+document.getElementById("lightbox").onclick = function(event) {
+  if (event.target === this) {
+    closeLightbox();
   }
-});
+};
 
-document.addEventListener("keydown", event => {
-  if (event.key === "Escape") {
-    lightbox.classList.remove("active");
-  }
-});
+document.getElementById("lightboxClose").onclick = closeLightbox;
 </script>
 
 </body>
