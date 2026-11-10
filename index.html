@@ -4,12 +4,77 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>A Little World of Us</title>
+.photo img {
+  cursor: zoom-in;
+  transition: transform 0.4s ease;
+}
 
+.photo:hover img {
+  transform: scale(1.04);
+}
+
+.lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 5, 8, 0.94);
+  z-index: 9999;
+  justify-content: center;
+  align-items: center;
+  padding: 25px;
+}
+
+.lightbox.active {
+  display: flex;
+}
+
+.lightbox img {
+  max-width: 90%;
+  max-height: 85vh;
+  object-fit: contain;
+  border: 1px solid #d7bd96;
+  box-shadow: 0 0 30px rgba(215, 189, 150, 0.2);
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: #d7bd96;
+  font-size: 38px;
+  cursor: pointer;
+  background: none;
+  border: none;
+}
 <style>
 * {
   box-sizing: border-box;
 }
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightboxClose">&times;</button>
+  <img id="lightboxImage" src="" alt="Ảnh phóng to">
+</div>
+    lightboxImage.src = img.src;
+    lightbox.classList.add("active");
+  });
+});
 
+closeButton.addEventListener("click", () => {
+  lightbox.classList.remove("active");
+});
+
+lightbox.addEventListener("click", (event) => {
+  if (event.target === lightbox) {
+    lightbox.classList.remove("active");
+  }
+});
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") {
+    lightbox.classList.remove("active");
+  }
+});
+</script>
 body {
   margin: 0;
   background: #171014;
