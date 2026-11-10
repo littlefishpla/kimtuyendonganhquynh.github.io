@@ -4,77 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>A Little World of Us</title>
-.photo img {
-  cursor: zoom-in;
-  transition: transform 0.4s ease;
-}
 
-.photo:hover img {
-  transform: scale(1.04);
-}
-
-.lightbox {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background: rgba(10, 5, 8, 0.94);
-  z-index: 9999;
-  justify-content: center;
-  align-items: center;
-  padding: 25px;
-}
-
-.lightbox.active {
-  display: flex;
-}
-
-.lightbox img {
-  max-width: 90%;
-  max-height: 85vh;
-  object-fit: contain;
-  border: 1px solid #d7bd96;
-  box-shadow: 0 0 30px rgba(215, 189, 150, 0.2);
-}
-
-.lightbox-close {
-  position: absolute;
-  top: 20px;
-  right: 30px;
-  color: #d7bd96;
-  font-size: 38px;
-  cursor: pointer;
-  background: none;
-  border: none;
-}
 <style>
 * {
   box-sizing: border-box;
 }
-<div class="lightbox" id="lightbox">
-  <button class="lightbox-close" id="lightboxClose">&times;</button>
-  <img id="lightboxImage" src="" alt="Ảnh phóng to">
-</div>
-    lightboxImage.src = img.src;
-    lightbox.classList.add("active");
-  });
-});
 
-closeButton.addEventListener("click", () => {
-  lightbox.classList.remove("active");
-});
-
-lightbox.addEventListener("click", (event) => {
-  if (event.target === lightbox) {
-    lightbox.classList.remove("active");
-  }
-});
-
-document.addEventListener("keydown", (event) => {
-  if (event.key === "Escape") {
-    lightbox.classList.remove("active");
-  }
-});
-</script>
 body {
   margin: 0;
   background: #171014;
@@ -152,6 +87,12 @@ section {
   height: 100%;
   object-fit: cover;
   display: block;
+  cursor: zoom-in;
+  transition: transform 0.4s ease;
+}
+
+.photo:hover img {
+  transform: scale(1.04);
 }
 
 .photo span {
@@ -167,11 +108,6 @@ section {
 
 .card p {
   font-size: 17px;
-}
-
-.video {
-  grid-column: span 2;
-  height: 220px;
 }
 
 .button {
@@ -190,6 +126,41 @@ footer {
   border-top: 1px solid #49303a;
 }
 
+/* LIGHTBOX */
+.lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 5, 8, 0.94);
+  z-index: 9999;
+  justify-content: center;
+  align-items: center;
+  padding: 25px;
+}
+
+.lightbox.active {
+  display: flex;
+}
+
+.lightbox img {
+  max-width: 90%;
+  max-height: 85vh;
+  object-fit: contain;
+  border: 1px solid #d7bd96;
+  box-shadow: 0 0 30px rgba(215, 189, 150, 0.2);
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: #d7bd96;
+  font-size: 38px;
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
 @media(max-width: 600px) {
   h1 {
     font-size: 36px;
@@ -199,10 +170,6 @@ footer {
   .gallery,
   .letters {
     grid-template-columns: 1fr;
-  }
-
-  .video {
-    grid-column: span 1;
   }
 
   section {
@@ -237,7 +204,6 @@ footer {
     <div class="photo">
       <img src="images/kimtuyen1.jpg" alt="Kim Tuyến">
     </div>
-
     <div class="photo">
       <img src="images/daq1.jpg" alt="Đồng Ánh Quỳnh">
     </div>
@@ -252,15 +218,12 @@ footer {
     <div class="photo">
       <img src="images/kimtuyen2.jpg" alt="Kim Tuyến">
     </div>
-
     <div class="photo">
       <img src="images/daq2.jpg" alt="Đồng Ánh Quỳnh">
     </div>
-
     <div class="photo">
       <img src="images/couple1.jpg" alt="Kim Tuyến và Đồng Ánh Quỳnh">
     </div>
-
     <div class="photo">
       <img src="images/couple2.jpg" alt="Kim Tuyến và Đồng Ánh Quỳnh">
     </div>
@@ -301,6 +264,42 @@ footer {
   <p>Made with love, for Kim Tuyến & Đồng Ánh Quỳnh.</p>
   A LITTLE WORLD OF US · 2026
 </footer>
+
+<!-- KHUNG XEM ANH LON -->
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightboxClose">&times;</button>
+  <img id="lightboxImage" src="" alt="Ảnh phóng to">
+</div>
+
+<!-- JAVASCRIPT -->
+<script>
+const lightbox = document.getElementById("lightbox");
+const lightboxImage = document.getElementById("lightboxImage");
+const closeButton = document.getElementById("lightboxClose");
+
+document.querySelectorAll(".photo img").forEach(img => {
+  img.addEventListener("click", () => {
+    lightboxImage.src = img.src;
+    lightbox.classList.add("active");
+  });
+});
+
+closeButton.addEventListener("click", () => {
+  lightbox.classList.remove("active");
+});
+
+lightbox.addEventListener("click", event => {
+  if (event.target === lightbox) {
+    lightbox.classList.remove("active");
+  }
+});
+
+document.addEventListener("keydown", event => {
+  if (event.key === "Escape") {
+    lightbox.classList.remove("active");
+  }
+});
+</script>
 
 </body>
 </html>
