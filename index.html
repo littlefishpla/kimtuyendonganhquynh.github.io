@@ -4,7 +4,31 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>A Little World of Us</title>
+/* PHOTO CAPTIONS */
+.gallery .photo {
+  position: relative;
+  overflow: hidden;
+}
 
+.photo-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 25px 15px 16px;
+  color: #f3dfc1;
+  font-family: Georgia, serif;
+  font-size: 16px;
+  font-style: italic;
+  letter-spacing: 1px;
+  text-align: center;
+  background: linear-gradient(
+    transparent,
+    rgba(20, 5, 12, 0.85)
+  );
+  pointer-events: none;
+  box-sizing: border-box;
+}
 <style>
 * {
   box-sizing: border-box;
@@ -243,10 +267,16 @@ footer {
 
   <div class="people">
     <div class="photo">
-      <img src="images/kimtuyen1.jpg" alt="Kim Tuyến" onclick="openLightbox(this)">
+      <div class="photo">
+  <img src="images/kimtuyen1.jpg" alt="Kim Tuyến" onclick="openLightbox(this)">
+  <span class="photo-caption">A timeless elegance</span>
+</div>
     </div>
     <div class="photo">
-      <img src="images/daq1.jpg" alt="Đồng Ánh Quỳnh" onclick="openLightbox(this)">
+      <div class="photo">
+  <img src="images/daq1.jpg" alt="Đồng Ánh Quỳnh" onclick="openLightbox(this)">
+  <span class="photo-caption">A soul that shines</span>
+</div>
     </div>
   </div>
 </section>
@@ -257,16 +287,28 @@ footer {
 
   <div class="gallery">
     <div class="photo">
-      <img src="images/kimtuyen2.jpg" alt="Kim Tuyến" onclick="openLightbox(this)">
+      <div class="photo">
+  <img src="images/kimtuyen2.jpg" alt="Kim Tuyến" onclick="openLightbox(this)">
+  <span class="photo-caption">Grace in every moment</span>
+</div>
     </div>
     <div class="photo">
-      <img src="images/daq2.jpg" alt="Đồng Ánh Quỳnh" onclick="openLightbox(this)">
+      <div class="photo">
+  <img src="images/daq2.jpg" alt="Đồng Ánh Quỳnh" onclick="openLightbox(this)">
+  <span class="photo-caption">Born to captivate</span>
+</div>
     </div>
     <div class="photo">
-      <img src="images/couple1.jpg" alt="Kim Tuyến và Đồng Ánh Quỳnh" onclick="openLightbox(this)">
+      <div class="photo">
+  <img src="images/couple1.jpg" alt="Kim Tuyến và Đồng Ánh Quỳnh" onclick="openLightbox(this)">
+  <span class="photo-caption">Two hearts, one story</span>
+</div>
     </div>
     <div class="photo">
-      <img src="images/couple2.jpg" alt="Kim Tuyến và Đồng Ánh Quỳnh" onclick="openLightbox(this)">
+      <div class="photo">
+  <img src="images/couple2.jpg" alt="Kim Tuyến và Đồng Ánh Quỳnh" onclick="openLightbox(this)">
+  <span class="photo-caption">Moments worth keeping</span>
+</div>
     </div>
   </div>
 </section>
