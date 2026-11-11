@@ -1,590 +1,771 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>A Little World of Us</title>
-  <meta name="description" content="A little corner dedicated to Kim Tuyến and Đồng Ánh Quỳnh, made with love by fans.">
-  <meta name="theme-color" content="#171014">
+<title>A Little World of Us</title>
+<meta name="description" content="A little corner dedicated to Kim Tuyến and Đồng Ánh Quỳnh, made with love by fans.">
+<meta name="theme-color" content="#171014">
 
-  <!-- VIETNAMESE FONT -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-  <style>
-    /* GENERAL */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    html {
-      scroll-behavior: smooth;
-      scroll-padding-top: 30px;
-    }
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 85px;
+}
 
-    body {
-      background: #171014;
-      color: #f5e9d5;
-      font-family: "Be Vietnam Pro", sans-serif;
-      font-weight: 300;
-      line-height: 1.8;
-    }
+body {
+  background: #171014;
+  color: #f5e9d5;
+  font-family: "Be Vietnam Pro", sans-serif;
+  font-weight: 300;
+  line-height: 1.8;
+}
 
-    a {
-      color: inherit;
-    }
+a { color: inherit; }
 
-    /* HEADER */
-    header {
-      min-height: 90vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 40px 20px;
+/* HEADER */
+header {
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 40px 20px;
+  background:
+    linear-gradient(rgba(23,16,20,.55), rgba(23,16,20,.88)),
+    url("images/couple1.jpg") center/cover no-repeat;
+}
 
-      background:
-        linear-gradient(
-          rgba(23, 16, 20, 0.55),
-          rgba(23, 16, 20, 0.88)
-        ),
-        url("images/couple1.jpg") center/cover no-repeat;
-    }
+header h1 {
+  font-size: clamp(34px, 7vw, 68px);
+  color: #e8c995;
+  letter-spacing: 2px;
+  font-weight: 400;
+  line-height: 1.3;
+}
 
-    header h1 {
-      font-size: clamp(34px, 7vw, 68px);
-      color: #e8c995;
-      letter-spacing: 2px;
-      font-weight: 400;
-      line-height: 1.3;
-    }
+header p {
+  margin-top: 20px;
+  font-size: 13px;
+  letter-spacing: 3px;
+}
 
-    header p {
-      margin-top: 20px;
-      font-size: 13px;
-      letter-spacing: 3px;
-      color: #f5e9d5;
-    }
+.header-line {
+  width: 75px;
+  height: 1px;
+  background: #e8c995;
+  margin-top: 28px;
+}
 
-    .header-line {
-      width: 75px;
-      height: 1px;
-      background: #e8c995;
-      margin-top: 28px;
-    }
+/* NAVIGATION */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  padding: 17px 15px;
+  background: rgba(33,23,28,.97);
+  border-bottom: 1px solid #806448;
+  backdrop-filter: blur(10px);
+}
 
-    /* NAVIGATION */
-    nav {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 35px;
-      padding: 17px 20px;
-      background: rgba(33, 23, 28, 0.96);
-      border-bottom: 1px solid #806448;
-      backdrop-filter: blur(10px);
-    }
+nav a {
+  color: #e8c995;
+  text-decoration: none;
+  font-size: 11px;
+  letter-spacing: 1.3px;
+}
 
-    nav a {
-      color: #e8c995;
-      text-decoration: none;
-      font-size: 12px;
-      letter-spacing: 1.5px;
-      transition: color 0.3s;
-    }
+nav a:hover,
+nav a.active {
+  color: white;
+}
 
-    nav a:hover {
-      color: white;
-    }
+/* SECTIONS */
+section {
+  padding: 85px 8%;
+  text-align: center;
+}
 
-    /* SECTIONS */
-    section {
-      padding: 85px 8%;
-      text-align: center;
-    }
+.section-title {
+  color: #e8c995;
+  font-size: clamp(25px, 4vw, 34px);
+  font-weight: 400;
+  letter-spacing: 1px;
+  line-height: 1.4;
+}
 
-    .section-title {
-      color: #e8c995;
-      font-size: clamp(25px, 4vw, 34px);
-      font-weight: 400;
-      letter-spacing: 1px;
-      line-height: 1.4;
-    }
+.section-subtitle {
+  color: #c9b8a8;
+  font-size: 13px;
+  margin: 15px 0 45px;
+}
 
-    .section-subtitle {
-      color: #c9b8a8;
-      font-size: 13px;
-      margin: 15px 0 45px;
-      letter-spacing: 0.5px;
-    }
+.intro {
+  max-width: 780px;
+  margin: auto;
+}
 
-    /* INTRO */
-    .intro {
-      max-width: 780px;
-      margin: auto;
-    }
+.intro p {
+  color: #d8c9bb;
+  font-size: 14px;
+  margin-top: 20px;
+  line-height: 2;
+}
 
-    .intro p {
-      color: #d8c9bb;
-      font-size: 14px;
-      margin-top: 20px;
-      line-height: 2;
-    }
+.intro-divider {
+  width: 55px;
+  height: 1px;
+  background: #806448;
+  margin: 30px auto;
+}
 
-    .intro-divider {
-      width: 55px;
-      height: 1px;
-      background: #806448;
-      margin: 30px auto;
-    }
+/* PHOTO GRID */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0,1fr));
+  gap: 22px;
+  max-width: 1100px;
+  margin: auto;
+}
 
-    /* GALLERY */
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 22px;
-      max-width: 1100px;
-      margin: auto;
-    }
+.photo {
+  position: relative;
+  min-width: 0;
+  height: 420px;
+  overflow: hidden;
+  background: #241a20;
+  border: 1px solid #806448;
+}
 
-    .photo {
-      position: relative;
-      min-width: 0;
-      height: 420px;
-      overflow: hidden;
-      background: #241a20;
-      border: 1px solid #806448;
-    }
+.photo img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  cursor: pointer;
+  transition: transform .5s ease;
+}
 
-    .photo img {
-      width: 100%;
-      height: 100%;
-      display: block;
-      object-fit: cover;
-      cursor: pointer;
-      transition: transform 0.5s ease;
-    }
+.photo:hover img {
+  transform: scale(1.035);
+}
 
-    .photo:hover img {
-      transform: scale(1.035);
-    }
+.kimtuyen-photo img,
+.daq-photo img {
+  object-position: center 20%;
+}
 
-    /* INDIVIDUAL PHOTO POSITION */
-    .kimtuyen-photo img {
-      object-position: center 20%;
-    }
+.couple-photo {
+  grid-column: span 2;
+  height: 380px;
+}
 
-    .daq-photo img {
-      object-position: center 20%;
-    }
+.couple-photo img {
+  object-fit: contain;
+  background: #171014;
+}
 
-    /* COUPLE PHOTOS */
-    .couple-photo {
-      grid-column: span 2;
-      height: 380px;
-    }
+.photo-caption {
+  position: absolute;
+  z-index: 2;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 45px 15px 18px;
+  color: #f5e9d5;
+  font-size: 13px;
+  letter-spacing: 1px;
+  background: linear-gradient(to top, rgba(0,0,0,.85), transparent);
+  pointer-events: none;
+}
 
-    .couple-photo img {
-      object-fit: contain;
-      object-position: center;
-      background: #171014;
-    }
+/* ALBUM CARDS */
+.album-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0,1fr));
+  gap: 25px;
+  max-width: 1000px;
+  margin: auto;
+}
 
-    /* PHOTO CAPTION */
-    .photo-caption {
-      position: absolute;
-      z-index: 2;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      padding: 45px 15px 18px;
-      color: #f5e9d5;
-      font-family: "Be Vietnam Pro", sans-serif;
-      font-size: 13px;
-      font-weight: 400;
-      letter-spacing: 1px;
-      text-align: center;
-      background: linear-gradient(
-        to top,
-        rgba(0, 0, 0, 0.85),
-        transparent
-      );
-      pointer-events: none;
-    }
+.album-card {
+  position: relative;
+  height: 340px;
+  overflow: hidden;
+  border: 1px solid #806448;
+  background: #241a20;
+  cursor: pointer;
+  text-align: center;
+}
 
-    /* FAN LETTERS */
-    .letters {
-      background: #21171c;
-      border-top: 1px solid rgba(128, 100, 72, 0.3);
-      border-bottom: 1px solid rgba(128, 100, 72, 0.3);
-    }
+.album-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: .72;
+  transition: transform .5s, opacity .5s;
+}
 
-    .letter-card {
-      max-width: 720px;
-      margin: 22px auto;
-      padding: 30px;
-      border: 1px solid #806448;
-      background: rgba(255, 255, 255, 0.025);
-    }
+.album-card:hover img {
+  transform: scale(1.05);
+  opacity: .9;
+}
 
-    .letter-card p {
-      color: #e0d2c3;
-      font-size: 14px;
-      font-style: italic;
-      line-height: 2;
-    }
+.album-info {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 30px 15px;
+  background: linear-gradient(transparent, rgba(15,8,12,.9));
+}
 
-    .letter-card span {
-      display: block;
-      margin-top: 15px;
-      color: #e8c995;
-      font-size: 12px;
-    }
+.album-info h3 {
+  color: #e8c995;
+  font-size: 21px;
+  font-weight: 400;
+}
 
-    /* BUTTON */
-    .letter-button {
-      display: inline-block;
-      margin-top: 28px;
-      padding: 12px 30px;
-      border: 1px solid #e8c995;
-      color: #e8c995;
-      text-decoration: none;
-      font-size: 12px;
-      letter-spacing: 1.5px;
-      transition: all 0.3s ease;
-    }
+.album-info p {
+  color: #f5e9d5;
+  font-size: 11px;
+  letter-spacing: 1px;
+  margin-top: 5px;
+}
 
-    .letter-button:hover {
-      background: #e8c995;
-      color: #171014;
-    }
+/* ALBUM DETAIL */
+.album-detail {
+  display: none;
+  max-width: 1100px;
+  margin: 0 auto;
+}
 
-    /* FOOTER */
-    footer {
-      padding: 38px 20px;
-      text-align: center;
-      background: #120d10;
-      color: #bca993;
-      font-size: 11px;
-      letter-spacing: 1px;
-    }
+.album-detail.active {
+  display: block;
+}
 
-    footer p + p {
-      margin-top: 8px;
-      color: #806448;
-    }
+.album-heading {
+  margin-bottom: 35px;
+}
 
-    /* LIGHTBOX */
-    .lightbox {
-      display: none;
-      position: fixed;
-      z-index: 9999;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.96);
-      justify-content: center;
-      align-items: center;
-      padding: 50px 20px;
-    }
+.album-heading h3 {
+  color: #e8c995;
+  font-size: 25px;
+  font-weight: 400;
+}
 
-    .lightbox.active {
-      display: flex;
-    }
+.album-heading p {
+  color: #c9b8a8;
+  font-size: 12px;
+  margin-top: 8px;
+}
 
-    .lightbox img {
-      max-width: 92%;
-      max-height: 85vh;
-      object-fit: contain;
-    }
+.back-button {
+  display: inline-block;
+  margin-bottom: 30px;
+  padding: 10px 24px;
+  border: 1px solid #806448;
+  background: transparent;
+  color: #e8c995;
+  font-family: inherit;
+  font-size: 11px;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
 
-    .lightbox-close {
-      position: absolute;
-      top: 15px;
-      right: 25px;
-      color: white;
-      background: none;
-      border: none;
-      font-size: 40px;
-      cursor: pointer;
-      line-height: 1;
-    }
+.back-button:hover {
+  background: #e8c995;
+  color: #171014;
+}
 
-    /* MOBILE */
-    @media (max-width: 600px) {
-      header {
-        min-height: 75vh;
-        padding: 30px 18px;
-      }
+/* FAN MOMENTS */
+.fan-section {
+  background: #21171c;
+  border-top: 1px solid rgba(128,100,72,.3);
+  border-bottom: 1px solid rgba(128,100,72,.3);
+}
 
-      header p {
-        font-size: 10px;
-        letter-spacing: 2px;
-      }
+.fan-note {
+  max-width: 700px;
+  margin: 0 auto 35px;
+  color: #d8c9bb;
+  font-size: 13px;
+}
 
-      nav {
-        gap: 18px;
-        padding: 15px 10px;
-      }
+.fan-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0,1fr));
+  gap: 22px;
+  max-width: 1000px;
+  margin: auto;
+}
 
-      nav a {
-        font-size: 10px;
-      }
+/* LETTERS */
+.letter-card {
+  max-width: 720px;
+  margin: 22px auto;
+  padding: 30px;
+  border: 1px solid #806448;
+  background: rgba(255,255,255,.025);
+}
 
-      section {
-        padding: 65px 6%;
-      }
+.letter-card p {
+  color: #e0d2c3;
+  font-size: 14px;
+  font-style: italic;
+  line-height: 2;
+}
 
-      .section-subtitle {
-        margin-bottom: 30px;
-      }
+.letter-card span {
+  display: block;
+  margin-top: 15px;
+  color: #e8c995;
+  font-size: 12px;
+}
 
-      .gallery {
-        grid-template-columns: 1fr;
-        gap: 16px;
-      }
+.letter-button {
+  display: inline-block;
+  margin-top: 28px;
+  padding: 12px 30px;
+  border: 1px solid #e8c995;
+  color: #e8c995;
+  text-decoration: none;
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  transition: all .3s;
+}
 
-      .photo {
-        height: 350px;
-      }
+.letter-button:hover {
+  background: #e8c995;
+  color: #171014;
+}
 
-      .solo-photo {
-        grid-column: span 1;
-      }
+/* FOOTER */
+footer {
+  padding: 38px 20px;
+  text-align: center;
+  background: #120d10;
+  color: #bca993;
+  font-size: 11px;
+  letter-spacing: 1px;
+}
 
-      .couple-photo {
-        grid-column: span 1;
-        height: 260px;
-      }
+footer p + p {
+  margin-top: 8px;
+  color: #806448;
+}
 
-      .photo-caption {
-        font-size: 12px;
-      }
+/* LIGHTBOX */
+.lightbox {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  inset: 0;
+  background: rgba(0,0,0,.96);
+  justify-content: center;
+  align-items: center;
+  padding: 50px 20px;
+}
 
-      .letter-card {
-        padding: 22px 18px;
-      }
+.lightbox.active { display: flex; }
 
-      .lightbox img {
-        max-width: 96%;
-        max-height: 80vh;
-      }
-    }
-  </style>
+.lightbox img {
+  max-width: 92%;
+  max-height: 85vh;
+  object-fit: contain;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 15px;
+  right: 25px;
+  color: white;
+  background: none;
+  border: none;
+  font-size: 40px;
+  cursor: pointer;
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+  header {
+    min-height: 75vh;
+    padding: 30px 18px;
+  }
+
+  header p {
+    font-size: 10px;
+    letter-spacing: 2px;
+  }
+
+  nav {
+    gap: 13px;
+    padding: 14px 8px;
+  }
+
+  nav a { font-size: 9px; }
+
+  section { padding: 65px 6%; }
+
+  .section-subtitle { margin-bottom: 30px; }
+
+  .gallery,
+  .fan-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .photo { height: 350px; }
+
+  .couple-photo {
+    grid-column: span 1;
+    height: 260px;
+  }
+
+  .album-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .album-card { height: 300px; }
+
+  .photo-caption { font-size: 12px; }
+
+  .letter-card { padding: 22px 18px; }
+
+  .lightbox img {
+    max-width: 96%;
+    max-height: 80vh;
+  }
+}
+</style>
 </head>
 
 <body>
 
-  <!-- HEADER -->
-  <header>
-    <h1>A Little World of Us</h1>
-    <p>A LITTLE SPACE MADE WITH LOVE</p>
-    <div class="header-line"></div>
-  </header>
+<!-- HEADER -->
+<header>
+  <h1>A Little World of Us</h1>
+  <p>A LITTLE SPACE MADE WITH LOVE</p>
+  <div class="header-line"></div>
+</header>
 
-  <!-- NAVIGATION -->
-  <nav>
-    <a href="#home">HOME</a>
-    <a href="#gallery">GALLERY</a>
-    <a href="#letters">LETTERS</a>
-  </nav>
+<!-- NAVIGATION -->
+<nav>
+  <a href="#home">HOME</a>
+  <a href="#gallery">GALLERY</a>
+  <a href="#fan-moments">FAN MOMENTS</a>
+  <a href="#letters">LETTERS</a>
+</nav>
 
-  <!-- INTRODUCTION -->
-  <section id="home">
-    <div class="intro">
-      <h2 class="section-title">Welcome to Our Little World</h2>
-
-      <p class="section-subtitle">
-        A little corner dedicated to Kim Tuyến & Đồng Ánh Quỳnh
-      </p>
-
-      <div class="intro-divider"></div>
-
-      <p>
-        Some moments deserve to be remembered,
-        some stories deserve to be told,
-        and some people make the world a little more beautiful.
-      </p>
-
-      <p>
-        This little space is made with love,
-        celebrating the beautiful moments, memories
-        and journeys of Kim Tuyến and Đồng Ánh Quỳnh.
-      </p>
-    </div>
-  </section>
-
-  <!-- GALLERY -->
-  <section id="gallery">
-    <h2 class="section-title">Our Memories</h2>
-
+<!-- HOME -->
+<section id="home">
+  <div class="intro">
+    <h2 class="section-title">Welcome to Our Little World</h2>
     <p class="section-subtitle">
-      A collection of moments we treasure
+      A little corner dedicated to Kim Tuyến & Đồng Ánh Quỳnh
     </p>
+    <div class="intro-divider"></div>
+    <p>
+      Some moments deserve to be remembered,
+      some stories deserve to be told,
+      and some people make the world a little more beautiful.
+    </p>
+    <p>
+      This little space is made with love,
+      celebrating the beautiful moments, memories
+      and journeys of Kim Tuyến and Đồng Ánh Quỳnh.
+    </p>
+  </div>
+
+  <!-- HOME PHOTOS: KEEP 2-2-2 -->
+  <div class="gallery" style="margin-top:50px;">
+
+    <div class="photo solo-photo kimtuyen-photo">
+      <img src="images/kimtuyen1.jpg" alt="Kim Tuyến" onclick="openLightbox(this)" loading="lazy">
+      <span class="photo-caption">A timeless elegance</span>
+    </div>
+
+    <div class="photo solo-photo kimtuyen-photo">
+      <img src="images/kimtuyen2.jpg" alt="Kim Tuyến" onclick="openLightbox(this)" loading="lazy">
+      <span class="photo-caption">Grace in every moment</span>
+    </div>
+
+    <div class="photo solo-photo daq-photo">
+      <img src="images/daq1.jpg" alt="Đồng Ánh Quỳnh" onclick="openLightbox(this)" loading="lazy">
+      <span class="photo-caption">A soul that shines</span>
+    </div>
+
+    <div class="photo solo-photo daq-photo">
+      <img src="images/daq2.jpg" alt="Đồng Ánh Quỳnh" onclick="openLightbox(this)" loading="lazy">
+      <span class="photo-caption">Born to captivate</span>
+    </div>
+
+    <div class="photo couple-photo">
+      <img src="images/couple1.jpg" alt="Kim Tuyến and Đồng Ánh Quỳnh" onclick="openLightbox(this)" loading="lazy">
+      <span class="photo-caption">Two hearts, one story</span>
+    </div>
+
+    <div class="photo couple-photo">
+      <img src="images/couple2.jpg" alt="Kim Tuyến and Đồng Ánh Quỳnh" onclick="openLightbox(this)" loading="lazy">
+      <span class="photo-caption">Moments worth keeping</span>
+    </div>
+
+  </div>
+</section>
+
+<!-- GALLERY ALBUMS -->
+<section id="gallery">
+  <h2 class="section-title">Our Gallery</h2>
+  <p class="section-subtitle">
+    A collection of moments we treasure
+  </p>
+
+  <!-- ALBUM COVER PAGE -->
+  <div id="albumList" class="album-grid">
+
+    <div class="album-card" onclick="openAlbum('kimtuyenAlbum')">
+      <img src="images/kimtuyen1.jpg" alt="Kim Tuyến album">
+      <div class="album-info">
+        <h3>Kim Tuyến</h3>
+        <p>HER BEAUTIFUL MOMENTS</p>
+      </div>
+    </div>
+
+    <div class="album-card" onclick="openAlbum('daqAlbum')">
+      <img src="images/daq1.jpg" alt="Đồng Ánh Quỳnh album">
+      <div class="album-info">
+        <h3>Đồng Ánh Quỳnh</h3>
+        <p>HER BEAUTIFUL MOMENTS</p>
+      </div>
+    </div>
+
+    <div class="album-card" onclick="openAlbum('coupleAlbum')" style="grid-column:1 / -1;">
+      <img src="images/couple1.jpg" alt="Together album">
+      <div class="album-info">
+        <h3>Together</h3>
+        <p>MOMENTS OF TWO</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- KIM TUYEN ALBUM -->
+  <div id="kimtuyenAlbum" class="album-detail">
+    <button class="back-button" onclick="backToAlbums()">← BACK TO ALBUMS</button>
+    <div class="album-heading">
+      <h3>Kim Tuyến</h3>
+      <p>A collection of her beautiful moments</p>
+    </div>
 
     <div class="gallery">
-
-      <!-- KIM TUYEN -->
-      <div class="photo solo-photo kimtuyen-photo">
-        <img
-          src="images/kimtuyen1.jpg"
-          alt="Kim Tuyến"
-          onclick="openLightbox(this)"
-          loading="lazy"
-        >
+      <div class="photo kimtuyen-photo">
+        <img src="images/kimtuyen1.jpg" alt="Kim Tuyến" onclick="openLightbox(this)">
         <span class="photo-caption">A timeless elegance</span>
       </div>
-
-      <div class="photo solo-photo kimtuyen-photo">
-        <img
-          src="images/kimtuyen2.jpg"
-          alt="Kim Tuyến"
-          onclick="openLightbox(this)"
-          loading="lazy"
-        >
+      <div class="photo kimtuyen-photo">
+        <img src="images/kimtuyen2.jpg" alt="Kim Tuyến" onclick="openLightbox(this)">
         <span class="photo-caption">Grace in every moment</span>
       </div>
 
-      <!-- DONG ANH QUYNH -->
-      <div class="photo solo-photo daq-photo">
-        <img
-          src="images/daq1.jpg"
-          alt="Đồng Ánh Quỳnh"
-          onclick="openLightbox(this)"
-          loading="lazy"
-        >
+      <!-- ADD MORE KIM TUYEN PHOTOS HERE -->
+      <!-- Example:
+      <div class="photo kimtuyen-photo">
+        <img src="images/kimtuyen3.jpg" alt="Kim Tuyến" onclick="openLightbox(this)">
+        <span class="photo-caption">Your caption here</span>
+      </div>
+      -->
+    </div>
+  </div>
+
+  <!-- DONG ANH QUYNH ALBUM -->
+  <div id="daqAlbum" class="album-detail">
+    <button class="back-button" onclick="backToAlbums()">← BACK TO ALBUMS</button>
+    <div class="album-heading">
+      <h3>Đồng Ánh Quỳnh</h3>
+      <p>A collection of her beautiful moments</p>
+    </div>
+
+    <div class="gallery">
+      <div class="photo daq-photo">
+        <img src="images/daq1.jpg" alt="Đồng Ánh Quỳnh" onclick="openLightbox(this)">
         <span class="photo-caption">A soul that shines</span>
       </div>
-
-      <div class="photo solo-photo daq-photo">
-        <img
-          src="images/daq2.jpg"
-          alt="Đồng Ánh Quỳnh"
-          onclick="openLightbox(this)"
-          loading="lazy"
-        >
+      <div class="photo daq-photo">
+        <img src="images/daq2.jpg" alt="Đồng Ánh Quỳnh" onclick="openLightbox(this)">
         <span class="photo-caption">Born to captivate</span>
       </div>
 
-      <!-- COUPLE PHOTOS -->
+      <!-- ADD MORE DONG ANH QUYNH PHOTOS HERE -->
+    </div>
+  </div>
+
+  <!-- COUPLE ALBUM -->
+  <div id="coupleAlbum" class="album-detail">
+    <button class="back-button" onclick="backToAlbums()">← BACK TO ALBUMS</button>
+    <div class="album-heading">
+      <h3>Together</h3>
+      <p>Moments worth keeping</p>
+    </div>
+
+    <div class="gallery">
       <div class="photo couple-photo">
-        <img
-          src="images/couple1.jpg"
-          alt="Kim Tuyến and Đồng Ánh Quỳnh"
-          onclick="openLightbox(this)"
-          loading="lazy"
-        >
+        <img src="images/couple1.jpg" alt="Kim Tuyến and Đồng Ánh Quỳnh" onclick="openLightbox(this)">
         <span class="photo-caption">Two hearts, one story</span>
       </div>
-
       <div class="photo couple-photo">
-        <img
-          src="images/couple2.jpg"
-          alt="Kim Tuyến and Đồng Ánh Quỳnh"
-          onclick="openLightbox(this)"
-          loading="lazy"
-        >
+        <img src="images/couple2.jpg" alt="Kim Tuyến and Đồng Ánh Quỳnh" onclick="openLightbox(this)">
         <span class="photo-caption">Moments worth keeping</span>
       </div>
 
-      <!-- ADD MORE PHOTOS BELOW -->
-
+      <!-- ADD MORE COUPLE PHOTOS HERE -->
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- FAN LETTERS -->
-  <section id="letters" class="letters">
+<!-- FAN MOMENTS -->
+<section id="fan-moments" class="fan-section">
+  <h2 class="section-title">Fan Moments</h2>
+  <p class="section-subtitle">
+    A little space for the people behind the love
+  </p>
 
-    <h2 class="section-title">Letters from Fans</h2>
+  <p class="fan-note">
+    Celebrating fan projects, special gatherings,
+    precious memories and moments shared by the fandom.
+  </p>
 
-    <p class="section-subtitle">
-      Little words, endless affection
-    </p>
+  <div class="fan-grid">
 
-    <div class="letter-card">
-      <p>
-        "Thank you for bringing so much beauty and inspiration
-        into our lives. We will always be cheering for you."
-      </p>
-      <span>— With love, a fan</span>
+    <!-- ADD FAN PHOTOS HERE -->
+    <!-- Example:
+    <div class="photo">
+      <img src="images/fan1.jpg" alt="Fan project" onclick="openLightbox(this)">
+      <span class="photo-caption">A little fan project</span>
     </div>
+    -->
 
-    <div class="letter-card">
-      <p>
-        "May your journey be filled with beautiful opportunities,
-        unforgettable memories and endless happiness."
-      </p>
-      <span>— Always supporting you</span>
-    </div>
-
-    <a
-      href="https://forms.gle/uPp9XkVFNaRfFdao9"
-      target="_blank"
-      rel="noopener noreferrer"
-      class="letter-button"
-    >
-      SEND YOUR LETTER
-    </a>
-
-  </section>
-
-  <!-- FOOTER -->
-  <footer>
-    <p>Made with love for Kim Tuyến & Đồng Ánh Quỳnh</p>
-    <p>© 2026 A Little World of Us</p>
-  </footer>
-
-  <!-- LIGHTBOX -->
-  <div class="lightbox" id="lightbox">
-    <button
-      class="lightbox-close"
-      id="lightboxClose"
-      aria-label="Close image"
-    >
-      &times;
-    </button>
-
-    <img id="lightboxImage" src="" alt="Enlarged photo">
   </div>
 
-  <!-- JAVASCRIPT -->
-  <script>
-    const lightbox = document.getElementById("lightbox");
-    const lightboxImage = document.getElementById("lightboxImage");
-    const closeButton = document.getElementById("lightboxClose");
+  <p style="color:#bca993; font-size:12px; margin-top:25px;">
+    Made possible by every little act of love.
+  </p>
+</section>
 
-    function openLightbox(img) {
-      lightboxImage.src = img.src;
-      lightboxImage.alt = img.alt;
-      lightbox.classList.add("active");
-      document.body.style.overflow = "hidden";
-    }
+<!-- FAN LETTERS -->
+<section id="letters" class="letters">
+  <h2 class="section-title">Letters from Fans</h2>
+  <p class="section-subtitle">
+    Little words, endless affection
+  </p>
 
-    function closeLightbox() {
-      lightbox.classList.remove("active");
-      document.body.style.overflow = "";
-    }
+  <div class="letter-card">
+    <p>
+      "Thank you for bringing so much beauty and inspiration
+      into our lives. We will always be cheering for you."
+    </p>
+    <span>— With love, a fan</span>
+  </div>
 
-    lightbox.addEventListener("click", function(event) {
-      if (event.target === lightbox) {
-        closeLightbox();
-      }
-    });
+  <div class="letter-card">
+    <p>
+      "May your journey be filled with beautiful opportunities,
+      unforgettable memories and endless happiness."
+    </p>
+    <span>— Always supporting you</span>
+  </div>
 
-    closeButton.addEventListener("click", closeLightbox);
+  <a
+    href="https://forms.gle/uPp9XkVFNaRfFdao9"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="letter-button"
+  >
+    SEND YOUR LETTER
+  </a>
+</section>
 
-    document.addEventListener("keydown", function(event) {
-      if (event.key === "Escape") {
-        closeLightbox();
-      }
-    });
-  </script>
+<!-- FOOTER -->
+<footer>
+  <p>Made with love for Kim Tuyến & Đồng Ánh Quỳnh</p>
+  <p>© 2026 A Little World of Us</p>
+</footer>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightboxClose" aria-label="Close image">&times;</button>
+  <img id="lightboxImage" src="" alt="Enlarged photo">
+</div>
+
+<script>
+/* ALBUM NAVIGATION */
+function openAlbum(albumId) {
+  document.getElementById("albumList").style.display = "none";
+
+  document.querySelectorAll(".album-detail").forEach(album => {
+    album.classList.remove("active");
+  });
+
+  document.getElementById(albumId).classList.add("active");
+}
+
+function backToAlbums() {
+  document.querySelectorAll(".album-detail").forEach(album => {
+    album.classList.remove("active");
+  });
+
+  document.getElementById("albumList").style.display = "grid";
+}
+
+/* LIGHTBOX */
+const lightbox = document.getElementById("lightbox");
+const lightboxImage = document.getElementById("lightboxImage");
+const closeButton = document.getElementById("lightboxClose");
+
+function openLightbox(img) {
+  lightboxImage.src = img.src;
+  lightboxImage.alt = img.alt;
+  lightbox.classList.add("active");
+  document.body.style.overflow = "hidden";
+}
+
+function closeLightbox() {
+  lightbox.classList.remove("active");
+  document.body.style.overflow = "";
+}
+
+lightbox.addEventListener("click", function(event) {
+  if (event.target === lightbox) {
+    closeLightbox();
+  }
+});
+
+closeButton.addEventListener("click", closeLightbox);
+
+document.addEventListener("keydown", function(event) {
+  if (event.key === "Escape") {
+    closeLightbox();
+  }
+});
+</script>
 
 </body>
 </html>
