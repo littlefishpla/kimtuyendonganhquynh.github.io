@@ -31,9 +31,7 @@ body {
   line-height: 1.8;
 }
 
-a {
-  color: inherit;
-}
+a { color: inherit; }
 
 /* FIRST-VISIT MUSIC INVITATION */
 .music-welcome {
@@ -48,9 +46,7 @@ a {
   backdrop-filter: blur(8px);
 }
 
-.music-welcome.hidden {
-  display: none;
-}
+.music-welcome.hidden { display: none; }
 
 .music-welcome-card {
   width: min(430px,100%);
@@ -164,9 +160,7 @@ nav a {
   letter-spacing: 1.2px;
 }
 
-nav a:hover {
-  color: white;
-}
+nav a:hover { color: white; }
 
 /* GENERAL SECTIONS */
 section {
@@ -235,9 +229,7 @@ section {
   transition: transform .5s ease;
 }
 
-.photo:hover img {
-  transform: scale(1.035);
-}
+.photo:hover img { transform: scale(1.035); }
 
 .kimtuyen-photo img,
 .daq-photo img {
@@ -330,13 +322,9 @@ section {
   margin: 0 auto;
 }
 
-.album-detail.active {
-  display: block;
-}
+.album-detail.active { display: block; }
 
-.album-heading {
-  margin-bottom: 35px;
-}
+.album-heading { margin-bottom: 35px; }
 
 .album-heading h3 {
   color: #e8c995;
@@ -391,9 +379,7 @@ section {
 }
 
 /* OUR JOURNEY */
-.journey-section {
-  background: #1d1419;
-}
+.journey-section { background: #1d1419; }
 
 .journey {
   position: relative;
@@ -471,9 +457,7 @@ section {
 }
 
 /* VIDEO MOMENTS */
-.video-section {
-  background: #21171c;
-}
+.video-section { background: #21171c; }
 
 .video-grid {
   display: grid;
@@ -513,9 +497,7 @@ section {
   padding-left: 4px;
 }
 
-.video-info {
-  padding: 18px 20px 22px;
-}
+.video-info { padding: 18px 20px 22px; }
 
 .video-info h3 {
   color: #e8c995;
@@ -639,8 +621,34 @@ section {
   color: #171014;
 }
 
-.music-player.hidden {
+.music-player.hidden { display: none; }
+
+/* MINIMIZE PLAYLIST WITHOUT STOPPING MUSIC */
+.music-player.collapsed {
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+  background: transparent;
+  box-shadow: none;
+}
+
+.music-player.collapsed .music-player-label,
+.music-player.collapsed .playlist-song {
   display: none;
+}
+
+.music-player.collapsed iframe {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+  border: 0;
+  margin: 0;
 }
 
 .music-player-close {
@@ -740,9 +748,7 @@ footer p + p {
   padding: 50px 20px;
 }
 
-.lightbox.active {
-  display: flex;
-}
+.lightbox.active { display: flex; }
 
 .lightbox img {
   max-width: 92%;
@@ -778,17 +784,11 @@ footer p + p {
     padding: 14px 8px;
   }
 
-  nav a {
-    font-size: 9px;
-  }
+  nav a { font-size: 9px; }
 
-  section {
-    padding: 65px 6%;
-  }
+  section { padding: 65px 6%; }
 
-  .section-subtitle {
-    margin-bottom: 30px;
-  }
+  .section-subtitle { margin-bottom: 30px; }
 
   .gallery,
   .fan-grid,
@@ -797,9 +797,7 @@ footer p + p {
     gap: 16px;
   }
 
-  .photo {
-    height: 350px;
-  }
+  .photo { height: 350px; }
 
   .couple-photo {
     grid-column: span 1;
@@ -811,26 +809,18 @@ footer p + p {
     gap: 18px;
   }
 
-  .album-card {
-    height: 300px;
-  }
+  .album-card { height: 300px; }
 
-  .photo-caption {
-    font-size: 12px;
-  }
+  .photo-caption { font-size: 12px; }
 
-  .letter-card {
-    padding: 22px 18px;
-  }
+  .letter-card { padding: 22px 18px; }
 
   .lightbox img {
     max-width: 96%;
     max-height: 80vh;
   }
 
-  .journey::before {
-    left: 78px;
-  }
+  .journey::before { left: 78px; }
 
   .journey-item {
     grid-template-columns: 60px 1fr;
@@ -842,25 +832,15 @@ footer p + p {
     overflow-wrap: anywhere;
   }
 
-  .journey-content {
-    padding: 17px 15px;
-  }
+  .journey-content { padding: 17px 15px; }
 
-  .journey-content::before {
-    left: -42px;
-  }
+  .journey-content::before { left: -42px; }
 
-  .journey-content h3 {
-    font-size: 15px;
-  }
+  .journey-content h3 { font-size: 15px; }
 
-  .journey-content p {
-    font-size: 12px;
-  }
+  .journey-content p { font-size: 12px; }
 
-  .video-cover {
-    min-height: 170px;
-  }
+  .video-cover { min-height: 170px; }
 }
 </style>
 </head>
@@ -870,15 +850,9 @@ footer p + p {
 <!-- FIRST-VISIT MUSIC INVITATION -->
 <div class="music-welcome" id="musicWelcome">
   <div class="music-welcome-card">
-    <div class="music-welcome-kicker">
-      A LITTLE WORLD OF US
-    </div>
-
+    <div class="music-welcome-kicker">A LITTLE WORLD OF US</div>
     <h2>A little music for you ♡</h2>
-
-    <p>
-      Let the music accompany your little journey here.
-    </p>
+    <p>Let the music accompany your little journey here.</p>
 
     <button class="music-welcome-play" id="musicWelcomePlay" type="button">
       ♫ TAP TO LISTEN
@@ -911,11 +885,9 @@ footer p + p {
 <section id="home">
   <div class="intro">
     <h2 class="section-title">Welcome to Our Little World</h2>
-
     <p class="section-subtitle">
       A little corner dedicated to Kim Tuyến & Đồng Ánh Quỳnh
     </p>
-
     <div class="intro-divider"></div>
 
     <p>
@@ -930,7 +902,6 @@ footer p + p {
   </div>
 
   <div class="gallery" style="margin-top:50px;">
-
     <div class="photo solo-photo kimtuyen-photo">
       <img src="images/kimtuyen1.jpg" alt="Kim Tuyến" onclick="openLightbox(this)" loading="lazy">
       <span class="photo-caption">A timeless elegance</span>
@@ -960,7 +931,6 @@ footer p + p {
       <img src="images/couple2.jpg" alt="Kim Tuyến and Đồng Ánh Quỳnh" onclick="openLightbox(this)" loading="lazy">
       <span class="photo-caption">Moments worth keeping</span>
     </div>
-
   </div>
 </section>
 
@@ -970,7 +940,6 @@ footer p + p {
   <p class="section-subtitle">A collection of moments we treasure</p>
 
   <div id="albumList" class="album-grid">
-
     <div class="album-card" onclick="openAlbum('kimtuyenAlbum')">
       <img src="images/kimtuyen1.jpg" alt="Kim Tuyến album">
       <div class="album-info">
@@ -994,7 +963,6 @@ footer p + p {
         <p>MOMENTS OF TWO</p>
       </div>
     </div>
-
   </div>
 
   <!-- KIM TUYEN ALBUM -->
@@ -1073,13 +1041,11 @@ footer p + p {
 <!-- OUR JOURNEY -->
 <section id="journey" class="journey-section">
   <h2 class="section-title">Our Journey</h2>
-
   <p class="section-subtitle">
     Every date holds a memory, every moment becomes a story
   </p>
 
   <div class="journey">
-
     <!-- JOURNEY ITEM TEMPLATE
     Copy this block to add a new memory.
 
@@ -1095,7 +1061,6 @@ footer p + p {
 
     <div class="journey-item">
       <div class="journey-date">A NEW<br>MEMORY</div>
-
       <div class="journey-content">
         <h3>The Beginning of a Story</h3>
         <p>
@@ -1104,7 +1069,6 @@ footer p + p {
         </p>
       </div>
     </div>
-
   </div>
 
   <p class="empty-note">
@@ -1115,13 +1079,11 @@ footer p + p {
 <!-- VIDEO MOMENTS -->
 <section id="video-moments" class="video-section">
   <h2 class="section-title">Video Moments</h2>
-
   <p class="section-subtitle">
     Little clips, beautiful memories, moments on repeat
   </p>
 
   <div class="video-grid">
-
     <!-- TIKTOK VIDEO TEMPLATE
     Copy this card for each new TikTok clip.
     Replace the TikTok link, title and description.
@@ -1149,7 +1111,6 @@ footer p + p {
       <div class="video-cover">
         <span class="video-play">▶</span>
       </div>
-
       <div class="video-info">
         <h3>Our Moments Together</h3>
         <p>A space for memorable clips of the two</p>
@@ -1160,13 +1121,11 @@ footer p + p {
       <div class="video-cover">
         <span class="video-play">▶</span>
       </div>
-
       <div class="video-info">
         <h3>Behind the Scenes</h3>
         <p>Behind-the-scenes moments and little memories</p>
       </div>
     </div>
-
   </div>
 
   <p class="empty-note">
@@ -1177,7 +1136,6 @@ footer p + p {
 <!-- FAN MOMENTS -->
 <section id="fan-moments" class="fan-section">
   <h2 class="section-title">Our Hearts</h2>
-
   <p class="section-subtitle">
     A little space for the people behind the love
   </p>
@@ -1199,10 +1157,7 @@ footer p + p {
 <!-- LETTERS -->
 <section id="letters" class="letters">
   <h2 class="section-title">Letters from Fans</h2>
-
-  <p class="section-subtitle">
-    Little words, endless affection
-  </p>
+  <p class="section-subtitle">Little words, endless affection</p>
 
   <div class="letter-card">
     <p>
@@ -1231,48 +1186,41 @@ footer p + p {
 
 <!-- MUSIC PLAYLIST -->
 <div class="music-player hidden" id="musicPlayer">
-
   <div class="music-player-label">
     <span>♫ A LITTLE PLAYLIST</span>
-
     <button
       class="music-player-close"
       id="musicPlayerClose"
-      aria-label="Close music player">
+      type="button"
+      aria-label="Minimize music player">
       &times;
     </button>
   </div>
 
   <button class="playlist-song" type="button" data-video="JFLLHYWkIxc">
     <span class="song-number">01</span>
-
     <span class="song-info">
       <span class="song-title">Theme Song</span>
       <span class="song-subtitle">Our little theme song</span>
     </span>
-
     <span class="song-play-icon">▶</span>
   </button>
 
   <button class="playlist-song" type="button" data-video="dfeGNIfSyGk">
     <span class="song-number">02</span>
-
     <span class="song-info">
       <span class="song-title">Phóng Zìn Zìn</span>
       <span class="song-subtitle">A little music moment</span>
     </span>
-
     <span class="song-play-icon">▶</span>
   </button>
 
   <button class="playlist-song" type="button" data-video="7t00g-TGu8s">
     <span class="song-number">03</span>
-
     <span class="song-info">
       <span class="song-title">Single Mom</span>
       <span class="song-subtitle">A little music moment</span>
     </span>
-
     <span class="song-play-icon">▶</span>
   </button>
 
@@ -1284,7 +1232,6 @@ footer p + p {
     referrerpolicy="strict-origin-when-cross-origin"
     allowfullscreen>
   </iframe>
-
 </div>
 
 <button
@@ -1309,7 +1256,6 @@ footer p + p {
     aria-label="Close image">
     &times;
   </button>
-
   <img id="lightboxImage" src="" alt="Enlarged photo">
 </div>
 
@@ -1381,10 +1327,12 @@ musicWelcomePlay.addEventListener("click", function() {
   musicWelcome.classList.add("hidden");
 
   musicPlayer.classList.remove("hidden");
+  musicPlayer.classList.remove("collapsed");
+
   musicPlayerToggle.style.display = "none";
   musicPlayerToggle.setAttribute("aria-expanded", "true");
 
-  // Start playing the first song after user interaction
+  // Play the first song after the visitor clicks
   playlistSongs[0].click();
 });
 
@@ -1396,6 +1344,8 @@ musicWelcomeLater.addEventListener("click", function() {
 /* OPEN PLAYLIST */
 musicPlayerToggle.addEventListener("click", function() {
   musicPlayer.classList.remove("hidden");
+  musicPlayer.classList.remove("collapsed");
+
   musicPlayerToggle.style.display = "none";
   musicPlayerToggle.setAttribute("aria-expanded", "true");
 });
@@ -1418,17 +1368,12 @@ playlistSongs.forEach(song => {
   });
 });
 
-/* CLOSE PLAYER AND STOP MUSIC */
+/* MINIMIZE PLAYLIST - KEEP MUSIC PLAYING */
 musicPlayerClose.addEventListener("click", function() {
-  youtubeMusic.src = "";
+  musicPlayer.classList.add("collapsed");
 
-  musicPlayer.classList.add("hidden");
   musicPlayerToggle.style.display = "block";
   musicPlayerToggle.setAttribute("aria-expanded", "false");
-
-  playlistSongs.forEach(item => {
-    item.classList.remove("active");
-  });
 });
 </script>
 
