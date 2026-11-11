@@ -454,80 +454,127 @@ section {
   max-width:650px;
 }
 
-/* FLOATING YOUTUBE MUSIC PLAYER */
+/* FLOATING MUSIC PLAYLIST */
 .music-player {
-  position:fixed;
-  right:22px;
-  bottom:22px;
-  z-index:5000;
-  width:250px;
-  padding:10px;
-  background:rgba(33,23,28,.97);
-  border:1px solid #806448;
-  box-shadow:0 8px 28px rgba(0,0,0,.4);
+  position: fixed;
+  right: 22px;
+  bottom: 75px;
+  z-index: 5000;
+  width: 310px;
+  max-width: calc(100vw - 24px);
+  padding: 16px;
+  background: rgba(33, 23, 28, .98);
+  border: 1px solid #806448;
+  box-shadow: 0 8px 28px rgba(0,0,0,.4);
 }
 
 .music-player-label {
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:10px;
-  margin-bottom:8px;
-  color:#e8c995;
-  font-size:10px;
-  letter-spacing:1px;
-}
-
-.music-player iframe {
-  display:block;
-  width:100%;
-  aspect-ratio:16 / 9;
-  border:0;
-}
-
-.music-player-toggle {
-  position:fixed;
-  right:22px;
-  bottom:22px;
-  z-index:5001;
-  padding:11px 16px;
-  border:1px solid #806448;
-  background:#21171c;
-  color:#e8c995;
-  font-family:inherit;
-  font-size:10px;
-  letter-spacing:1px;
-  cursor:pointer;
-}
-
-.music-player-toggle:hover {
-  background:#e8c995;
-  color:#171014;
-}
-
-.music-player.hidden {
-  display:none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+  color: #e8c995;
+  font-size: 11px;
+  letter-spacing: 1.5px;
 }
 
 .music-player-close {
-  border:0;
-  background:transparent;
-  color:#e8c995;
-  font-size:17px;
-  line-height:1;
-  cursor:pointer;
+  border: 0;
+  background: transparent;
+  color: #e8c995;
+  font-size: 22px;
+  cursor: pointer;
 }
 
-@media (max-width:600px) {
+.playlist-song {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 12px 10px;
+  margin-bottom: 7px;
+  border: 1px solid rgba(232,201,149,.2);
+  background: rgba(255,255,255,.03);
+  color: #f1e8df;
+  text-align: left;
+  font-family: inherit;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.playlist-song:hover,
+.playlist-song.active {
+  background: rgba(232,201,149,.13);
+  border-color: #e8c995;
+}
+
+.song-number {
+  color: #e8c995;
+  font-size: 12px;
+}
+
+.song-info {
+  flex: 1;
+}
+
+.song-title {
+  display: block;
+  font-size: 12px;
+  letter-spacing: .5px;
+}
+
+.song-subtitle {
+  display: block;
+  margin-top: 4px;
+  color: #b9a8a0;
+  font-size: 10px;
+}
+
+.song-play-icon {
+  color: #e8c995;
+}
+
+.music-player iframe {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  margin-top: 12px;
+  border: 0;
+}
+
+.music-player-toggle {
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  z-index: 5001;
+  padding: 11px 16px;
+  border: 1px solid #806448;
+  background: #21171c;
+  color: #e8c995;
+  font-family: inherit;
+  font-size: 10px;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+
+.music-player-toggle:hover {
+  background: #e8c995;
+  color: #171014;
+}
+
+.music-player.hidden {
+  display: none;
+}
+
+@media (max-width: 600px) {
   .music-player {
-    right:12px;
-    bottom:68px;
-    width:min(250px, calc(100vw - 24px));
+    right: 12px;
+    bottom: 68px;
   }
 
   .music-player-toggle {
-    right:12px;
-    bottom:12px;
+    right: 12px;
+    bottom: 12px;
   }
 }
 
@@ -1021,23 +1068,59 @@ footer p + p {
   </a>
 </section>
 
-<!-- FLOATING YOUTUBE MUSIC PLAYER -->
-<div class="music-player hidden" id="musicPlayer">
-  <div class="music-player-label">
-    <span>♫ OUR LITTLE THEME SONG</span>
-    <button class="music-player-close" id="musicPlayerClose" aria-label="Close music player">&times;</button>
+ <div class="music-player-label">
+    <span>♫ OUR LITTLE PLAYLIST</span>
+    <button
+      class="music-player-close"
+      id="musicPlayerClose"
+      aria-label="Close music player">
+      &times;
+    </button>
   </div>
 
+  <button class="playlist-song" data-video="JFLLHYWkIxc">
+    <span class="song-number">01</span>
+    <span class="song-info">
+      <span class="song-title">Theme Song</span>
+      <span class="song-subtitle">Our little world</span>
+    </span>
+    <span class="song-play-icon">▶</span>
+  </button>
+
+  <button class="playlist-song" data-video="dfeGNIfSyGk">
+    <span class="song-number">02</span>
+    <span class="song-info">
+      <span class="song-title">Phóng Zìn Zìn</span>
+      <span class="song-subtitle">A little happiness</span>
+    </span>
+    <span class="song-play-icon">▶</span>
+  </button>
+
+  <button class="playlist-song" data-video="7t00g-TGu8s">
+    <span class="song-number">03</span>
+    <span class="song-info">
+      <span class="song-title">Single Mom</span>
+      <span class="song-subtitle">Another lovely moment</span>
+    </span>
+    <span class="song-play-icon">▶</span>
+  </button>
+
   <iframe
-    src="https://www.youtube.com/embed/JFLLHYWkIxc?autoplay=1&controls=1&loop=1&playlist=JFLLHYWkIxc&playsinline=1"
-    title="A Little World of Us - Theme Song"
+    id="youtubeMusic"
+    src=""
+    title="A Little World of Us Playlist"
     allow="autoplay; encrypted-media; picture-in-picture"
     referrerpolicy="strict-origin-when-cross-origin"
     allowfullscreen>
   </iframe>
+
 </div>
 
-<button class="music-player-toggle" id="musicPlayerToggle" type="button" aria-expanded="false">
+<button
+  class="music-player-toggle"
+  id="musicPlayerToggle"
+  type="button"
+  aria-expanded="false">
   ♫ PLAY MUSIC
 </button>
 
@@ -1104,10 +1187,15 @@ document.addEventListener("keydown", function(event) {
   }
 });
 
-/* YOUTUBE MUSIC PLAYER */
+/* YOUTUBE MUSIC PLAYLIST */
+
 const musicPlayer = document.getElementById("musicPlayer");
 const musicPlayerToggle = document.getElementById("musicPlayerToggle");
 const musicPlayerClose = document.getElementById("musicPlayerClose");
+const youtubeMusic = document.getElementById("youtubeMusic");
+const playlistSongs = document.querySelectorAll(".playlist-song");
+
+const youtubeEmbed = "https://www.youtube.com/embed/";
 
 musicPlayerToggle.addEventListener("click", function() {
   musicPlayer.classList.remove("hidden");
@@ -1115,12 +1203,38 @@ musicPlayerToggle.addEventListener("click", function() {
   musicPlayerToggle.setAttribute("aria-expanded", "true");
 });
 
+playlistSongs.forEach(function(song) {
+  song.addEventListener("click", function() {
+
+    const videoId = song.dataset.video;
+
+    // Dừng bài đang phát trước khi chuyển bài
+    youtubeMusic.src = "";
+
+    // Phát bài được chọn
+    youtubeMusic.src =
+      youtubeEmbed + videoId +
+      "?autoplay=1&controls=1&playsinline=1";
+
+    // Đánh dấu bài đang phát
+    playlistSongs.forEach(function(item) {
+      item.classList.remove("active");
+    });
+
+    song.classList.add("active");
+  });
+});
+
 musicPlayerClose.addEventListener("click", function() {
+
+  // Dừng nhạc khi đóng playlist
+  youtubeMusic.src = "";
+
   musicPlayer.classList.add("hidden");
   musicPlayerToggle.style.display = "block";
   musicPlayerToggle.setAttribute("aria-expanded", "false");
-});
-</script>
 
-</body>
-</html>
+  playlistSongs.forEach(function(song) {
+    song.classList.remove("active");
+  });
+});
