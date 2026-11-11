@@ -13,448 +13,657 @@
 <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+* { margin:0; padding:0; box-sizing:border-box; }
 
 html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 85px;
+  scroll-behavior:smooth;
+  scroll-padding-top:90px;
 }
 
 body {
-  background: #171014;
-  color: #f5e9d5;
-  font-family: "Be Vietnam Pro", sans-serif;
-  font-weight: 300;
-  line-height: 1.8;
+  background:#171014;
+  color:#f5e9d5;
+  font-family:"Be Vietnam Pro",sans-serif;
+  font-weight:300;
+  line-height:1.8;
 }
 
-a { color: inherit; }
+a { color:inherit; }
 
 /* HEADER */
 header {
-  min-height: 90vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 40px 20px;
+  min-height:90vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:40px 20px;
   background:
-    linear-gradient(rgba(23,16,20,.55), rgba(23,16,20,.88)),
+    linear-gradient(rgba(23,16,20,.55),rgba(23,16,20,.88)),
     url("images/couple1.jpg") center/cover no-repeat;
 }
 
 header h1 {
-  font-size: clamp(34px, 7vw, 68px);
-  color: #e8c995;
-  letter-spacing: 2px;
-  font-weight: 400;
-  line-height: 1.3;
+  font-size:clamp(34px,7vw,68px);
+  color:#e8c995;
+  letter-spacing:2px;
+  font-weight:400;
+  line-height:1.3;
 }
 
 header p {
-  margin-top: 20px;
-  font-size: 13px;
-  letter-spacing: 3px;
+  margin-top:20px;
+  font-size:13px;
+  letter-spacing:3px;
 }
 
 .header-line {
-  width: 75px;
-  height: 1px;
-  background: #e8c995;
-  margin-top: 28px;
+  width:75px;
+  height:1px;
+  background:#e8c995;
+  margin-top:28px;
 }
 
 /* NAVIGATION */
 nav {
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 30px;
-  padding: 17px 15px;
-  background: rgba(33,23,28,.97);
-  border-bottom: 1px solid #806448;
-  backdrop-filter: blur(10px);
+  position:sticky;
+  top:0;
+  z-index:100;
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:25px;
+  padding:17px 15px;
+  background:rgba(33,23,28,.97);
+  border-bottom:1px solid #806448;
+  backdrop-filter:blur(10px);
 }
 
 nav a {
-  color: #e8c995;
-  text-decoration: none;
-  font-size: 11px;
-  letter-spacing: 1.3px;
+  color:#e8c995;
+  text-decoration:none;
+  font-size:10px;
+  letter-spacing:1.2px;
 }
 
-nav a:hover,
-nav a.active {
-  color: white;
-}
+nav a:hover { color:white; }
 
 /* SECTIONS */
 section {
-  padding: 85px 8%;
-  text-align: center;
+  padding:85px 8%;
+  text-align:center;
 }
 
 .section-title {
-  color: #e8c995;
-  font-size: clamp(25px, 4vw, 34px);
-  font-weight: 400;
-  letter-spacing: 1px;
-  line-height: 1.4;
+  color:#e8c995;
+  font-size:clamp(25px,4vw,34px);
+  font-weight:400;
+  letter-spacing:1px;
+  line-height:1.4;
 }
 
 .section-subtitle {
-  color: #c9b8a8;
-  font-size: 13px;
-  margin: 15px 0 45px;
+  color:#c9b8a8;
+  font-size:13px;
+  margin:15px 0 45px;
 }
 
-.intro {
-  max-width: 780px;
-  margin: auto;
-}
+.intro { max-width:780px; margin:auto; }
 
 .intro p {
-  color: #d8c9bb;
-  font-size: 14px;
-  margin-top: 20px;
-  line-height: 2;
+  color:#d8c9bb;
+  font-size:14px;
+  margin-top:20px;
+  line-height:2;
 }
 
 .intro-divider {
-  width: 55px;
-  height: 1px;
-  background: #806448;
-  margin: 30px auto;
+  width:55px;
+  height:1px;
+  background:#806448;
+  margin:30px auto;
 }
 
 /* PHOTO GRID */
 .gallery {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0,1fr));
-  gap: 22px;
-  max-width: 1100px;
-  margin: auto;
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:22px;
+  max-width:1100px;
+  margin:auto;
 }
 
 .photo {
-  position: relative;
-  min-width: 0;
-  height: 420px;
-  overflow: hidden;
-  background: #241a20;
-  border: 1px solid #806448;
+  position:relative;
+  min-width:0;
+  height:420px;
+  overflow:hidden;
+  background:#241a20;
+  border:1px solid #806448;
 }
 
 .photo img {
-  width: 100%;
-  height: 100%;
-  display: block;
-  object-fit: cover;
-  cursor: pointer;
-  transition: transform .5s ease;
+  width:100%;
+  height:100%;
+  display:block;
+  object-fit:cover;
+  cursor:pointer;
+  transition:transform .5s ease;
 }
 
-.photo:hover img {
-  transform: scale(1.035);
-}
+.photo:hover img { transform:scale(1.035); }
 
 .kimtuyen-photo img,
-.daq-photo img {
-  object-position: center 20%;
-}
+.daq-photo img { object-position:center 20%; }
 
 .couple-photo {
-  grid-column: span 2;
-  height: 380px;
+  grid-column:span 2;
+  height:380px;
 }
 
 .couple-photo img {
-  object-fit: contain;
-  background: #171014;
+  object-fit:contain;
+  background:#171014;
 }
 
 .photo-caption {
-  position: absolute;
-  z-index: 2;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  padding: 45px 15px 18px;
-  color: #f5e9d5;
-  font-size: 13px;
-  letter-spacing: 1px;
-  background: linear-gradient(to top, rgba(0,0,0,.85), transparent);
-  pointer-events: none;
+  position:absolute;
+  z-index:2;
+  bottom:0;
+  left:0;
+  width:100%;
+  padding:45px 15px 18px;
+  color:#f5e9d5;
+  font-size:13px;
+  letter-spacing:1px;
+  background:linear-gradient(to top,rgba(0,0,0,.85),transparent);
+  pointer-events:none;
 }
 
 /* ALBUM CARDS */
 .album-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0,1fr));
-  gap: 25px;
-  max-width: 1000px;
-  margin: auto;
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:25px;
+  max-width:1000px;
+  margin:auto;
 }
 
 .album-card {
-  position: relative;
-  height: 340px;
-  overflow: hidden;
-  border: 1px solid #806448;
-  background: #241a20;
-  cursor: pointer;
-  text-align: center;
+  position:relative;
+  height:340px;
+  overflow:hidden;
+  border:1px solid #806448;
+  background:#241a20;
+  cursor:pointer;
+  text-align:center;
 }
 
 .album-card img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: .72;
-  transition: transform .5s, opacity .5s;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  opacity:.72;
+  transition:transform .5s,opacity .5s;
 }
 
 .album-card:hover img {
-  transform: scale(1.05);
-  opacity: .9;
+  transform:scale(1.05);
+  opacity:.9;
 }
 
 .album-info {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: center;
-  padding: 30px 15px;
-  background: linear-gradient(transparent, rgba(15,8,12,.9));
+  position:absolute;
+  inset:0;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+  align-items:center;
+  padding:30px 15px;
+  background:linear-gradient(transparent,rgba(15,8,12,.9));
 }
 
 .album-info h3 {
-  color: #e8c995;
-  font-size: 21px;
-  font-weight: 400;
+  color:#e8c995;
+  font-size:21px;
+  font-weight:400;
 }
 
 .album-info p {
-  color: #f5e9d5;
-  font-size: 11px;
-  letter-spacing: 1px;
-  margin-top: 5px;
+  color:#f5e9d5;
+  font-size:11px;
+  letter-spacing:1px;
+  margin-top:5px;
 }
 
 /* ALBUM DETAIL */
 .album-detail {
-  display: none;
-  max-width: 1100px;
-  margin: 0 auto;
+  display:none;
+  max-width:1100px;
+  margin:0 auto;
 }
 
-.album-detail.active {
-  display: block;
-}
+.album-detail.active { display:block; }
 
-.album-heading {
-  margin-bottom: 35px;
-}
+.album-heading { margin-bottom:35px; }
 
 .album-heading h3 {
-  color: #e8c995;
-  font-size: 25px;
-  font-weight: 400;
+  color:#e8c995;
+  font-size:25px;
+  font-weight:400;
 }
 
 .album-heading p {
-  color: #c9b8a8;
-  font-size: 12px;
-  margin-top: 8px;
+  color:#c9b8a8;
+  font-size:12px;
+  margin-top:8px;
 }
 
 .back-button {
-  display: inline-block;
-  margin-bottom: 30px;
-  padding: 10px 24px;
-  border: 1px solid #806448;
-  background: transparent;
-  color: #e8c995;
-  font-family: inherit;
-  font-size: 11px;
-  letter-spacing: 1px;
-  cursor: pointer;
+  display:inline-block;
+  margin-bottom:30px;
+  padding:10px 24px;
+  border:1px solid #806448;
+  background:transparent;
+  color:#e8c995;
+  font-family:inherit;
+  font-size:11px;
+  letter-spacing:1px;
+  cursor:pointer;
 }
 
 .back-button:hover {
-  background: #e8c995;
-  color: #171014;
+  background:#e8c995;
+  color:#171014;
 }
 
 /* OUR HEARTS */
 .fan-section {
-  background: #21171c;
-  border-top: 1px solid rgba(128,100,72,.3);
-  border-bottom: 1px solid rgba(128,100,72,.3);
+  background:#21171c;
+  border-top:1px solid rgba(128,100,72,.3);
+  border-bottom:1px solid rgba(128,100,72,.3);
 }
 
 .fan-note {
-  max-width: 700px;
-  margin: 0 auto 35px;
-  color: #d8c9bb;
-  font-size: 13px;
+  max-width:700px;
+  margin:0 auto 35px;
+  color:#d8c9bb;
+  font-size:13px;
 }
 
 .fan-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0,1fr));
-  gap: 22px;
-  max-width: 1000px;
-  margin: auto;
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:22px;
+  max-width:1000px;
+  margin:auto;
+}
+
+/* OUR JOURNEY */
+.journey-section {
+  background:#1d1419;
+}
+
+.journey {
+  position:relative;
+  max-width:850px;
+  margin:0 auto;
+  text-align:left;
+}
+
+.journey::before {
+  content:"";
+  position:absolute;
+  left:115px;
+  top:8px;
+  bottom:8px;
+  width:1px;
+  background:#806448;
+}
+
+.journey-item {
+  display:grid;
+  grid-template-columns:95px 1fr;
+  gap:40px;
+  position:relative;
+  margin-bottom:35px;
+}
+
+.journey-date {
+  color:#e8c995;
+  font-size:12px;
+  letter-spacing:1px;
+  text-align:right;
+  padding-top:5px;
+}
+
+.journey-content {
+  position:relative;
+  padding:22px 25px;
+  border:1px solid rgba(128,100,72,.65);
+  background:rgba(255,255,255,.025);
+}
+
+.journey-content::before {
+  content:"";
+  position:absolute;
+  left:-47px;
+  top:28px;
+  width:11px;
+  height:11px;
+  border-radius:50%;
+  background:#e8c995;
+  border:3px solid #1d1419;
+  box-shadow:0 0 0 1px #806448;
+}
+
+.journey-content h3 {
+  color:#e8c995;
+  font-size:17px;
+  font-weight:400;
+  margin-bottom:8px;
+}
+
+.journey-content p {
+  color:#d8c9bb;
+  font-size:13px;
+  line-height:1.9;
+}
+
+.journey-content a {
+  display:inline-block;
+  margin-top:12px;
+  color:#e8c995;
+  font-size:11px;
+  text-decoration:none;
+  border-bottom:1px solid #806448;
+}
+
+/* VIDEO MOMENTS */
+.video-section {
+  background:#21171c;
+}
+
+.video-grid {
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:22px;
+  max-width:1000px;
+  margin:auto;
+}
+
+.video-card {
+  overflow:hidden;
+  border:1px solid #806448;
+  background:#171014;
+  text-align:left;
+}
+
+.video-cover {
+  min-height:190px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:
+    linear-gradient(rgba(23,16,20,.25),rgba(23,16,20,.75)),
+    url("images/couple2.jpg") center/cover no-repeat;
+}
+
+.video-play {
+  width:55px;
+  height:55px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border:1px solid #e8c995;
+  border-radius:50%;
+  color:#e8c995;
+  font-size:22px;
+  padding-left:4px;
+}
+
+.video-info { padding:18px 20px 22px; }
+
+.video-info h3 {
+  color:#e8c995;
+  font-size:16px;
+  font-weight:400;
+}
+
+.video-info p {
+  color:#c9b8a8;
+  font-size:11px;
+  margin-top:5px;
+}
+
+.video-link {
+  display:inline-block;
+  margin-top:12px;
+  color:#e8c995;
+  font-size:11px;
+  letter-spacing:1px;
+  text-decoration:none;
+  border-bottom:1px solid #806448;
+}
+
+.empty-note {
+  color:#bca993;
+  font-size:12px;
+  margin:25px auto 0;
+  max-width:650px;
+}
+
+/* THEME SONG */
+.music-section {
+  padding:65px 8%;
+  background:#171014;
+  border-top:1px solid rgba(128,100,72,.4);
+}
+
+.music-box {
+  max-width:650px;
+  margin:auto;
+  padding:30px 25px;
+  border:1px solid #806448;
+  background:rgba(255,255,255,.025);
+}
+
+.music-icon {
+  width:75px;
+  height:75px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  margin:0 auto 18px;
+  border:1px solid #806448;
+  border-radius:50%;
+  color:#e8c995;
+  font-size:30px;
+}
+
+.music-box h3 {
+  color:#e8c995;
+  font-size:19px;
+  font-weight:400;
+}
+
+.music-box p {
+  color:#c9b8a8;
+  font-size:12px;
+  margin-top:8px;
+}
+
+.music-status {
+  display:inline-block;
+  margin-top:18px;
+  padding:7px 18px;
+  border:1px solid #806448;
+  color:#e8c995;
+  font-size:10px;
+  letter-spacing:1.5px;
 }
 
 /* LETTERS */
 .letter-card {
-  max-width: 720px;
-  margin: 22px auto;
-  padding: 30px;
-  border: 1px solid #806448;
-  background: rgba(255,255,255,.025);
+  max-width:720px;
+  margin:22px auto;
+  padding:30px;
+  border:1px solid #806448;
+  background:rgba(255,255,255,.025);
 }
 
 .letter-card p {
-  color: #e0d2c3;
-  font-size: 14px;
-  font-style: italic;
-  line-height: 2;
+  color:#e0d2c3;
+  font-size:14px;
+  font-style:italic;
+  line-height:2;
 }
 
 .letter-card span {
-  display: block;
-  margin-top: 15px;
-  color: #e8c995;
-  font-size: 12px;
+  display:block;
+  margin-top:15px;
+  color:#e8c995;
+  font-size:12px;
 }
 
 .letter-button {
-  display: inline-block;
-  margin-top: 28px;
-  padding: 12px 30px;
-  border: 1px solid #e8c995;
-  color: #e8c995;
-  text-decoration: none;
-  font-size: 12px;
-  letter-spacing: 1.5px;
-  transition: all .3s;
+  display:inline-block;
+  margin-top:28px;
+  padding:12px 30px;
+  border:1px solid #e8c995;
+  color:#e8c995;
+  text-decoration:none;
+  font-size:12px;
+  letter-spacing:1.5px;
+  transition:all .3s;
 }
 
 .letter-button:hover {
-  background: #e8c995;
-  color: #171014;
+  background:#e8c995;
+  color:#171014;
 }
 
 /* FOOTER */
 footer {
-  padding: 38px 20px;
-  text-align: center;
-  background: #120d10;
-  color: #bca993;
-  font-size: 11px;
-  letter-spacing: 1px;
+  padding:38px 20px;
+  text-align:center;
+  background:#120d10;
+  color:#bca993;
+  font-size:11px;
+  letter-spacing:1px;
 }
 
 footer p + p {
-  margin-top: 8px;
-  color: #806448;
+  margin-top:8px;
+  color:#806448;
 }
 
 /* LIGHTBOX */
 .lightbox {
-  display: none;
-  position: fixed;
-  z-index: 9999;
-  inset: 0;
-  background: rgba(0,0,0,.96);
-  justify-content: center;
-  align-items: center;
-  padding: 50px 20px;
+  display:none;
+  position:fixed;
+  z-index:9999;
+  inset:0;
+  background:rgba(0,0,0,.96);
+  justify-content:center;
+  align-items:center;
+  padding:50px 20px;
 }
 
-.lightbox.active { display: flex; }
+.lightbox.active { display:flex; }
 
 .lightbox img {
-  max-width: 92%;
-  max-height: 85vh;
-  object-fit: contain;
+  max-width:92%;
+  max-height:85vh;
+  object-fit:contain;
 }
 
 .lightbox-close {
-  position: absolute;
-  top: 15px;
-  right: 25px;
-  color: white;
-  background: none;
-  border: none;
-  font-size: 40px;
-  cursor: pointer;
+  position:absolute;
+  top:15px;
+  right:25px;
+  color:white;
+  background:none;
+  border:none;
+  font-size:40px;
+  cursor:pointer;
 }
 
 /* MOBILE */
-@media (max-width: 600px) {
+@media (max-width:600px) {
   header {
-    min-height: 75vh;
-    padding: 30px 18px;
+    min-height:75vh;
+    padding:30px 18px;
   }
 
   header p {
-    font-size: 10px;
-    letter-spacing: 2px;
+    font-size:10px;
+    letter-spacing:2px;
   }
 
   nav {
-    gap: 13px;
-    padding: 14px 8px;
+    gap:12px;
+    padding:14px 8px;
   }
 
-  nav a { font-size: 9px; }
+  nav a { font-size:9px; }
 
-  section { padding: 65px 6%; }
+  section { padding:65px 6%; }
 
-  .section-subtitle { margin-bottom: 30px; }
+  .section-subtitle { margin-bottom:30px; }
 
   .gallery,
-  .fan-grid {
-    grid-template-columns: 1fr;
-    gap: 16px;
+  .fan-grid,
+  .video-grid {
+    grid-template-columns:1fr;
+    gap:16px;
   }
 
-  .photo { height: 350px; }
+  .photo { height:350px; }
 
   .couple-photo {
-    grid-column: span 1;
-    height: 260px;
+    grid-column:span 1;
+    height:260px;
   }
 
   .album-grid {
-    grid-template-columns: 1fr;
-    gap: 18px;
+    grid-template-columns:1fr;
+    gap:18px;
   }
 
-  .album-card { height: 300px; }
+  .album-card { height:300px; }
 
-  .photo-caption { font-size: 12px; }
+  .photo-caption { font-size:12px; }
 
-  .letter-card { padding: 22px 18px; }
+  .letter-card { padding:22px 18px; }
 
   .lightbox img {
-    max-width: 96%;
-    max-height: 80vh;
+    max-width:96%;
+    max-height:80vh;
   }
+
+  .journey::before { left:78px; }
+
+  .journey-item {
+    grid-template-columns:60px 1fr;
+    gap:35px;
+  }
+
+  .journey-date {
+    font-size:10px;
+    overflow-wrap:anywhere;
+  }
+
+  .journey-content { padding:17px 15px; }
+
+  .journey-content::before { left:-42px; }
+
+  .journey-content h3 { font-size:15px; }
+
+  .journey-content p { font-size:12px; }
+
+  .video-cover { min-height:170px; }
 }
 </style>
 </head>
@@ -472,8 +681,11 @@ footer p + p {
 <nav>
   <a href="#home">HOME</a>
   <a href="#gallery">GALLERY</a>
+  <a href="#journey">OUR JOURNEY</a>
+  <a href="#video-moments">VIDEO MOMENTS</a>
   <a href="#fan-moments">FAN MOMENTS</a>
   <a href="#letters">LETTERS</a>
+  <a href="#theme-song">THEME SONG</a>
 </nav>
 
 <!-- HOME -->
@@ -535,11 +747,8 @@ footer p + p {
 <!-- GALLERY ALBUMS -->
 <section id="gallery">
   <h2 class="section-title">Our Gallery</h2>
-  <p class="section-subtitle">
-    A collection of moments we treasure
-  </p>
+  <p class="section-subtitle">A collection of moments we treasure</p>
 
-  <!-- ALBUM COVER PAGE -->
   <div id="albumList" class="album-grid">
 
     <div class="album-card" onclick="openAlbum('kimtuyenAlbum')">
@@ -565,7 +774,6 @@ footer p + p {
         <p>MOMENTS OF TWO</p>
       </div>
     </div>
-
   </div>
 
   <!-- KIM TUYEN ALBUM -->
@@ -587,12 +795,6 @@ footer p + p {
       </div>
 
       <!-- ADD MORE KIM TUYEN PHOTOS HERE -->
-      <!-- Example:
-      <div class="photo kimtuyen-photo">
-        <img src="images/kimtuyen3.jpg" alt="Kim Tuyến" onclick="openLightbox(this)">
-        <span class="photo-caption">Your caption here</span>
-      </div>
-      -->
     </div>
   </div>
 
@@ -641,7 +843,105 @@ footer p + p {
   </div>
 </section>
 
-<!-- OUR HEARTS -->
+<!-- OUR JOURNEY -->
+<section id="journey" class="journey-section">
+  <h2 class="section-title">Our Journey</h2>
+  <p class="section-subtitle">
+    Every date holds a memory, every moment becomes a story
+  </p>
+
+  <div class="journey">
+
+    <!-- JOURNEY ITEM TEMPLATE
+    Copy this block to add a new memory.
+
+    <div class="journey-item">
+      <div class="journey-date">DD.MM.YYYY</div>
+      <div class="journey-content">
+        <h3>Event or Memory Title</h3>
+        <p>Write a short description of this special moment.</p>
+        <a href="PASTE-LINK-HERE" target="_blank" rel="noopener noreferrer">VIEW MORE</a>
+      </div>
+    </div>
+    -->
+
+    <div class="journey-item">
+      <div class="journey-date">A NEW<br>MEMORY</div>
+      <div class="journey-content">
+        <h3>The Beginning of a Story</h3>
+        <p>
+          This is where we will keep the special dates,
+          shared events and unforgettable memories of their journey.
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+  <p class="empty-note">
+    More memories will find their place here, one day at a time.
+  </p>
+</section>
+
+<!-- VIDEO MOMENTS -->
+<section id="video-moments" class="video-section">
+  <h2 class="section-title">Video Moments</h2>
+  <p class="section-subtitle">
+    Little clips, beautiful memories, moments on repeat
+  </p>
+
+  <div class="video-grid">
+
+    <!-- TIKTOK VIDEO TEMPLATE
+    Copy this card for each new TikTok clip.
+    Replace the TikTok link, title and description.
+
+    <div class="video-card">
+      <a href="PASTE-TIKTOK-LINK-HERE"
+         target="_blank"
+         rel="noopener noreferrer"
+         class="video-cover">
+        <span class="video-play">▶</span>
+      </a>
+      <div class="video-info">
+        <h3>Video Title</h3>
+        <p>Short description or category</p>
+        <a class="video-link"
+           href="PASTE-TIKTOK-LINK-HERE"
+           target="_blank"
+           rel="noopener noreferrer">WATCH ON TIKTOK ↗</a>
+      </div>
+    </div>
+    -->
+
+    <div class="video-card">
+      <div class="video-cover">
+        <span class="video-play">▶</span>
+      </div>
+      <div class="video-info">
+        <h3>Our Moments Together</h3>
+        <p>A space for memorable clips of the two</p>
+      </div>
+    </div>
+
+    <div class="video-card">
+      <div class="video-cover">
+        <span class="video-play">▶</span>
+      </div>
+      <div class="video-info">
+        <h3>Behind the Scenes</h3>
+        <p>Behind-the-scenes moments and little memories</p>
+      </div>
+    </div>
+
+  </div>
+
+  <p class="empty-note">
+    TikTok moments will be added here. Stay tuned for more!
+  </p>
+</section>
+
+<!-- FAN MOMENTS -->
 <section id="fan-moments" class="fan-section">
   <h2 class="section-title">Our Hearts</h2>
   <p class="section-subtitle">
@@ -656,16 +956,10 @@ footer p + p {
   <div class="fan-grid">
 
     <!-- ADD FAN PHOTOS HERE -->
-    <!-- Example:
-    <div class="photo">
-      <img src="images/fan1.jpg" alt="Fan project" onclick="openLightbox(this)">
-      <span class="photo-caption">A little fan project</span>
-    </div>
-    -->
 
   </div>
 
-  <p style="color:#bca993; font-size:12px; margin-top:25px;">
+  <p style="color:#bca993;font-size:12px;margin-top:25px;">
     Made possible by every little act of love.
   </p>
 </section>
@@ -673,9 +967,7 @@ footer p + p {
 <!-- FAN LETTERS -->
 <section id="letters" class="letters">
   <h2 class="section-title">Letters from Fans</h2>
-  <p class="section-subtitle">
-    Little words, endless affection
-  </p>
+  <p class="section-subtitle">Little words, endless affection</p>
 
   <div class="letter-card">
     <p>
@@ -701,6 +993,24 @@ footer p + p {
   >
     SEND YOUR LETTER
   </a>
+</section>
+
+<!-- THEME SONG -->
+<section id="theme-song" class="music-section">
+  <h2 class="section-title">Our Theme Song</h2>
+  <p class="section-subtitle">
+    A melody for the memories we keep
+  </p>
+
+  <div class="music-box">
+    <div class="music-icon">♫</div>
+    <h3>A Little Melody for Us</h3>
+    <p>
+      Our special song will be added here soon.
+      Until then, let the memories speak.
+    </p>
+    <span class="music-status">COMING SOON</span>
+  </div>
 </section>
 
 <!-- FOOTER -->
