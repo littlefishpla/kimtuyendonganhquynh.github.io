@@ -6,10 +6,35 @@
 <title>A Little World of Us</title>
 <meta name="description" content="A little corner dedicated to Kim Tuyến and Đồng Ánh Quỳnh, made with love by fans.">
 <meta name="theme-color" content="#171014">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+
+body {
+  background: #171014;
+  color: #f5e9d5;
+  font-family: "Be Vietnam Pro", sans-serif;
+  font-weight: 300;
+  line-height: 1.8;
+}
+
+a {
+  color: inherit;
+}
+
 /* FIRST-VISIT MUSIC INVITATION */
 .music-welcome {
   position: fixed;
@@ -66,6 +91,11 @@
   cursor: pointer;
 }
 
+.music-welcome-play:hover {
+  background: transparent;
+  color: #e8c995;
+}
+
 .music-welcome-later {
   display: block;
   margin: 15px auto 0;
@@ -76,12 +106,768 @@
   font-size: 10px;
   cursor: pointer;
 }
-<style>
-*{margin:0;padding:0;box-sizing:border-box;}
-html{scroll-behavior:smooth;scroll-padding-top:90px;}
-body{background:#171014;color:#f5e9d5;font-family:"Be Vietnam Pro",sans-serif;font-weight:300;line-height:1.8;}
 
-  <!-- FIRST-VISIT MUSIC INVITATION -->
+/* HEADER */
+header {
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 40px 20px;
+  background:
+    linear-gradient(rgba(23,16,20,.55),rgba(23,16,20,.88)),
+    url("images/couple1.jpg") center/cover no-repeat;
+}
+
+header h1 {
+  font-size: clamp(34px,7vw,68px);
+  color: #e8c995;
+  letter-spacing: 2px;
+  font-weight: 400;
+  line-height: 1.3;
+}
+
+header p {
+  margin-top: 20px;
+  font-size: 13px;
+  letter-spacing: 3px;
+}
+
+.header-line {
+  width: 75px;
+  height: 1px;
+  background: #e8c995;
+  margin-top: 28px;
+}
+
+/* NAVIGATION */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 25px;
+  padding: 17px 15px;
+  background: rgba(33,23,28,.97);
+  border-bottom: 1px solid #806448;
+  backdrop-filter: blur(10px);
+}
+
+nav a {
+  color: #e8c995;
+  text-decoration: none;
+  font-size: 10px;
+  letter-spacing: 1.2px;
+}
+
+nav a:hover {
+  color: white;
+}
+
+/* GENERAL SECTIONS */
+section {
+  padding: 85px 8%;
+  text-align: center;
+}
+
+.section-title {
+  color: #e8c995;
+  font-size: clamp(25px,4vw,34px);
+  font-weight: 400;
+  letter-spacing: 1px;
+  line-height: 1.4;
+}
+
+.section-subtitle {
+  color: #c9b8a8;
+  font-size: 13px;
+  margin: 15px 0 45px;
+}
+
+/* HOME */
+.intro {
+  max-width: 780px;
+  margin: auto;
+}
+
+.intro p {
+  color: #d8c9bb;
+  font-size: 14px;
+  margin-top: 20px;
+  line-height: 2;
+}
+
+.intro-divider {
+  width: 55px;
+  height: 1px;
+  background: #806448;
+  margin: 30px auto;
+}
+
+/* PHOTO GALLERY */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(2,minmax(0,1fr));
+  gap: 22px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.photo {
+  position: relative;
+  min-width: 0;
+  height: 420px;
+  overflow: hidden;
+  background: #241a20;
+  border: 1px solid #806448;
+}
+
+.photo img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  cursor: pointer;
+  transition: transform .5s ease;
+}
+
+.photo:hover img {
+  transform: scale(1.035);
+}
+
+.kimtuyen-photo img,
+.daq-photo img {
+  object-position: center 20%;
+}
+
+.couple-photo {
+  grid-column: span 2;
+  height: 380px;
+}
+
+.couple-photo img {
+  object-fit: contain;
+  background: #171014;
+}
+
+.photo-caption {
+  position: absolute;
+  z-index: 2;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 45px 15px 18px;
+  color: #f5e9d5;
+  font-size: 13px;
+  letter-spacing: 1px;
+  background: linear-gradient(to top,rgba(0,0,0,.85),transparent);
+  pointer-events: none;
+}
+
+/* ALBUMS */
+.album-grid {
+  display: grid;
+  grid-template-columns: repeat(2,minmax(0,1fr));
+  gap: 25px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.album-card {
+  position: relative;
+  height: 340px;
+  overflow: hidden;
+  border: 1px solid #806448;
+  background: #241a20;
+  cursor: pointer;
+  text-align: center;
+}
+
+.album-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: .72;
+  transition: transform .5s,opacity .5s;
+}
+
+.album-card:hover img {
+  transform: scale(1.05);
+  opacity: .9;
+}
+
+.album-info {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 30px 15px;
+  background: linear-gradient(transparent,rgba(15,8,12,.9));
+}
+
+.album-info h3 {
+  color: #e8c995;
+  font-size: 21px;
+  font-weight: 400;
+}
+
+.album-info p {
+  color: #f5e9d5;
+  font-size: 11px;
+  letter-spacing: 1px;
+  margin-top: 5px;
+}
+
+.album-detail {
+  display: none;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.album-detail.active {
+  display: block;
+}
+
+.album-heading {
+  margin-bottom: 35px;
+}
+
+.album-heading h3 {
+  color: #e8c995;
+  font-size: 25px;
+  font-weight: 400;
+}
+
+.album-heading p {
+  color: #c9b8a8;
+  font-size: 12px;
+  margin-top: 8px;
+}
+
+.back-button {
+  display: inline-block;
+  margin-bottom: 30px;
+  padding: 10px 24px;
+  border: 1px solid #806448;
+  background: transparent;
+  color: #e8c995;
+  font-family: inherit;
+  font-size: 11px;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+
+.back-button:hover {
+  background: #e8c995;
+  color: #171014;
+}
+
+/* FAN MOMENTS */
+.fan-section {
+  background: #21171c;
+  border-top: 1px solid rgba(128,100,72,.3);
+  border-bottom: 1px solid rgba(128,100,72,.3);
+}
+
+.fan-note {
+  max-width: 700px;
+  margin: 0 auto 35px;
+  color: #d8c9bb;
+  font-size: 13px;
+}
+
+.fan-grid {
+  display: grid;
+  grid-template-columns: repeat(2,minmax(0,1fr));
+  gap: 22px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+/* OUR JOURNEY */
+.journey-section {
+  background: #1d1419;
+}
+
+.journey {
+  position: relative;
+  max-width: 850px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.journey::before {
+  content: "";
+  position: absolute;
+  left: 115px;
+  top: 8px;
+  bottom: 8px;
+  width: 1px;
+  background: #806448;
+}
+
+.journey-item {
+  display: grid;
+  grid-template-columns: 95px 1fr;
+  gap: 40px;
+  position: relative;
+  margin-bottom: 35px;
+}
+
+.journey-date {
+  color: #e8c995;
+  font-size: 12px;
+  letter-spacing: 1px;
+  text-align: right;
+  padding-top: 5px;
+}
+
+.journey-content {
+  position: relative;
+  padding: 22px 25px;
+  border: 1px solid rgba(128,100,72,.65);
+  background: rgba(255,255,255,.025);
+}
+
+.journey-content::before {
+  content: "";
+  position: absolute;
+  left: -47px;
+  top: 28px;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: #e8c995;
+  border: 3px solid #1d1419;
+  box-shadow: 0 0 0 1px #806448;
+}
+
+.journey-content h3 {
+  color: #e8c995;
+  font-size: 17px;
+  font-weight: 400;
+  margin-bottom: 8px;
+}
+
+.journey-content p {
+  color: #d8c9bb;
+  font-size: 13px;
+  line-height: 1.9;
+}
+
+.journey-content a {
+  display: inline-block;
+  margin-top: 12px;
+  color: #e8c995;
+  font-size: 11px;
+  text-decoration: none;
+  border-bottom: 1px solid #806448;
+}
+
+/* VIDEO MOMENTS */
+.video-section {
+  background: #21171c;
+}
+
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(2,minmax(0,1fr));
+  gap: 22px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.video-card {
+  overflow: hidden;
+  border: 1px solid #806448;
+  background: #171014;
+  text-align: left;
+}
+
+.video-cover {
+  min-height: 190px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:
+    linear-gradient(rgba(23,16,20,.25),rgba(23,16,20,.75)),
+    url("images/couple2.jpg") center/cover no-repeat;
+}
+
+.video-play {
+  width: 55px;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #e8c995;
+  border-radius: 50%;
+  color: #e8c995;
+  font-size: 22px;
+  padding-left: 4px;
+}
+
+.video-info {
+  padding: 18px 20px 22px;
+}
+
+.video-info h3 {
+  color: #e8c995;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.video-info p {
+  color: #c9b8a8;
+  font-size: 11px;
+  margin-top: 5px;
+}
+
+.video-link {
+  display: inline-block;
+  margin-top: 12px;
+  color: #e8c995;
+  font-size: 11px;
+  letter-spacing: 1px;
+  text-decoration: none;
+  border-bottom: 1px solid #806448;
+}
+
+.empty-note {
+  color: #bca993;
+  font-size: 12px;
+  margin: 25px auto 0;
+  max-width: 650px;
+}
+
+/* MUSIC PLAYLIST */
+.music-player {
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  z-index: 5000;
+  width: 290px;
+  padding: 14px;
+  background: rgba(33,23,28,.98);
+  border: 1px solid #806448;
+  box-shadow: 0 8px 28px rgba(0,0,0,.4);
+}
+
+.music-player-label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 12px;
+  color: #e8c995;
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+
+.playlist-song {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 11px 9px;
+  margin-top: 7px;
+  border: 1px solid rgba(128,100,72,.45);
+  background: rgba(255,255,255,.025);
+  color: #f5e9d5;
+  text-align: left;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.playlist-song:hover,
+.playlist-song.active {
+  border-color: #e8c995;
+  background: rgba(232,201,149,.10);
+}
+
+.song-number {
+  color: #e8c995;
+  font-size: 12px;
+  min-width: 18px;
+}
+
+.song-info {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.song-title {
+  color: #e8c995;
+  font-size: 11px;
+}
+
+.song-subtitle {
+  color: #bca993;
+  font-size: 9px;
+  margin-top: 2px;
+}
+
+.song-play-icon {
+  color: #e8c995;
+  font-size: 13px;
+}
+
+.music-player-toggle {
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  z-index: 5001;
+  padding: 11px 16px;
+  border: 1px solid #806448;
+  background: #21171c;
+  color: #e8c995;
+  font-family: inherit;
+  font-size: 10px;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+
+.music-player-toggle:hover {
+  background: #e8c995;
+  color: #171014;
+}
+
+.music-player.hidden {
+  display: none;
+}
+
+.music-player-close {
+  border: 0;
+  background: transparent;
+  color: #e8c995;
+  font-size: 17px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.music-player iframe {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: 0;
+  margin-top: 12px;
+}
+
+@media (max-width:600px) {
+  .music-player {
+    right: 12px;
+    bottom: 68px;
+    width: min(290px,calc(100vw - 24px));
+  }
+
+  .music-player-toggle {
+    right: 12px;
+    bottom: 12px;
+  }
+}
+
+/* LETTERS */
+.letter-card {
+  max-width: 720px;
+  margin: 22px auto;
+  padding: 30px;
+  border: 1px solid #806448;
+  background: rgba(255,255,255,.025);
+}
+
+.letter-card p {
+  color: #e0d2c3;
+  font-size: 14px;
+  font-style: italic;
+  line-height: 2;
+}
+
+.letter-card span {
+  display: block;
+  margin-top: 15px;
+  color: #e8c995;
+  font-size: 12px;
+}
+
+.letter-button {
+  display: inline-block;
+  margin-top: 28px;
+  padding: 12px 30px;
+  border: 1px solid #e8c995;
+  color: #e8c995;
+  text-decoration: none;
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  transition: all .3s;
+}
+
+.letter-button:hover {
+  background: #e8c995;
+  color: #171014;
+}
+
+/* FOOTER */
+footer {
+  padding: 38px 20px;
+  text-align: center;
+  background: #120d10;
+  color: #bca993;
+  font-size: 11px;
+  letter-spacing: 1px;
+}
+
+footer p + p {
+  margin-top: 8px;
+  color: #806448;
+}
+
+/* LIGHTBOX */
+.lightbox {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  inset: 0;
+  background: rgba(0,0,0,.96);
+  justify-content: center;
+  align-items: center;
+  padding: 50px 20px;
+}
+
+.lightbox.active {
+  display: flex;
+}
+
+.lightbox img {
+  max-width: 92%;
+  max-height: 85vh;
+  object-fit: contain;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 15px;
+  right: 25px;
+  color: white;
+  background: none;
+  border: none;
+  font-size: 40px;
+  cursor: pointer;
+}
+
+/* MOBILE */
+@media (max-width:600px) {
+  header {
+    min-height: 75vh;
+    padding: 30px 18px;
+  }
+
+  header p {
+    font-size: 10px;
+    letter-spacing: 2px;
+  }
+
+  nav {
+    gap: 12px;
+    padding: 14px 8px;
+  }
+
+  nav a {
+    font-size: 9px;
+  }
+
+  section {
+    padding: 65px 6%;
+  }
+
+  .section-subtitle {
+    margin-bottom: 30px;
+  }
+
+  .gallery,
+  .fan-grid,
+  .video-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .photo {
+    height: 350px;
+  }
+
+  .couple-photo {
+    grid-column: span 1;
+    height: 260px;
+  }
+
+  .album-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .album-card {
+    height: 300px;
+  }
+
+  .photo-caption {
+    font-size: 12px;
+  }
+
+  .letter-card {
+    padding: 22px 18px;
+  }
+
+  .lightbox img {
+    max-width: 96%;
+    max-height: 80vh;
+  }
+
+  .journey::before {
+    left: 78px;
+  }
+
+  .journey-item {
+    grid-template-columns: 60px 1fr;
+    gap: 35px;
+  }
+
+  .journey-date {
+    font-size: 10px;
+    overflow-wrap: anywhere;
+  }
+
+  .journey-content {
+    padding: 17px 15px;
+  }
+
+  .journey-content::before {
+    left: -42px;
+  }
+
+  .journey-content h3 {
+    font-size: 15px;
+  }
+
+  .journey-content p {
+    font-size: 12px;
+  }
+
+  .video-cover {
+    min-height: 170px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- FIRST-VISIT MUSIC INVITATION -->
 <div class="music-welcome" id="musicWelcome">
   <div class="music-welcome-card">
     <div class="music-welcome-kicker">
@@ -90,7 +876,9 @@ body{background:#171014;color:#f5e9d5;font-family:"Be Vietnam Pro",sans-serif;fo
 
     <h2>A little music for you ♡</h2>
 
-    <p>Let the music accompany your little journey here.</p>
+    <p>
+      Let the music accompany your little journey here.
+    </p>
 
     <button class="music-welcome-play" id="musicWelcomePlay" type="button">
       ♫ TAP TO LISTEN
@@ -101,385 +889,449 @@ body{background:#171014;color:#f5e9d5;font-family:"Be Vietnam Pro",sans-serif;fo
     </button>
   </div>
 </div>
-  
-a{color:inherit;}
-header{min-height:90vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:40px 20px;background:linear-gradient(rgba(23,16,20,.55),rgba(23,16,20,.88)),url("images/couple1.jpg") center/cover no-repeat;}
-header h1{font-size:clamp(34px,7vw,68px);color:#e8c995;letter-spacing:2px;font-weight:400;line-height:1.3;}
-header p{margin-top:20px;font-size:13px;letter-spacing:3px;}
-.header-line{width:75px;height:1px;background:#e8c995;margin-top:28px;}
-nav{position:sticky;top:0;z-index:100;display:flex;justify-content:center;flex-wrap:wrap;gap:25px;padding:17px 15px;background:rgba(33,23,28,.97);border-bottom:1px solid #806448;backdrop-filter:blur(10px);}
-nav a{color:#e8c995;text-decoration:none;font-size:10px;letter-spacing:1.2px;}
-nav a:hover{color:white;}
-section{padding:85px 8%;text-align:center;}
-.section-title{color:#e8c995;font-size:clamp(25px,4vw,34px);font-weight:400;letter-spacing:1px;line-height:1.4;}
-.section-subtitle{color:#c9b8a8;font-size:13px;margin:15px 0 45px;}
-.intro{max-width:780px;margin:auto;}
-.intro p{color:#d8c9bb;font-size:14px;margin-top:20px;line-height:2;}
-.intro-divider{width:55px;height:1px;background:#806448;margin:30px auto;}
-.gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;max-width:1100px;margin:auto;}
-.photo{position:relative;min-width:0;height:420px;overflow:hidden;background:#241a20;border:1px solid #806448;}
-.photo img{width:100%;height:100%;display:block;object-fit:cover;cursor:pointer;transition:transform .5s ease;}
-.photo:hover img{transform:scale(1.035);}
-.kimtuyen-photo img,.daq-photo img{object-position:center 20%;}
-.couple-photo{grid-column:span 2;height:380px;}
-.couple-photo img{object-fit:contain;background:#171014;}
-.photo-caption{position:absolute;z-index:2;bottom:0;left:0;width:100%;padding:45px 15px 18px;color:#f5e9d5;font-size:13px;letter-spacing:1px;background:linear-gradient(to top,rgba(0,0,0,.85),transparent);pointer-events:none;}
-.album-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:25px;max-width:1000px;margin:auto;}
-.album-card{position:relative;height:340px;overflow:hidden;border:1px solid #806448;background:#241a20;cursor:pointer;text-align:center;}
-.album-card img{width:100%;height:100%;object-fit:cover;opacity:.72;transition:transform .5s,opacity .5s;}
-.album-card:hover img{transform:scale(1.05);opacity:.9;}
-.album-info{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;padding:30px 15px;background:linear-gradient(transparent,rgba(15,8,12,.9));}
-.album-info h3{color:#e8c995;font-size:21px;font-weight:400;}
-.album-info p{color:#f5e9d5;font-size:11px;letter-spacing:1px;margin-top:5px;}
-.album-detail{display:none;max-width:1100px;margin:0 auto;}
-.album-detail.active{display:block;}
-.album-heading{margin-bottom:35px;}
-.album-heading h3{color:#e8c995;font-size:25px;font-weight:400;}
-.album-heading p{color:#c9b8a8;font-size:12px;margin-top:8px;}
-.back-button{display:inline-block;margin-bottom:30px;padding:10px 24px;border:1px solid #806448;background:transparent;color:#e8c995;font-family:inherit;font-size:11px;letter-spacing:1px;cursor:pointer;}
-.back-button:hover{background:#e8c995;color:#171014;}
-.fan-section{background:#21171c;border-top:1px solid rgba(128,100,72,.3);border-bottom:1px solid rgba(128,100,72,.3);}
-.fan-note{max-width:700px;margin:0 auto 35px;color:#d8c9bb;font-size:13px;}
-.fan-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;max-width:1000px;margin:auto;}
-.journey-section{background:#1d1419;}
-.journey{position:relative;max-width:850px;margin:0 auto;text-align:left;}
-.journey::before{content:"";position:absolute;left:115px;top:8px;bottom:8px;width:1px;background:#806448;}
-.journey-item{display:grid;grid-template-columns:95px 1fr;gap:40px;position:relative;margin-bottom:35px;}
-.journey-date{color:#e8c995;font-size:12px;letter-spacing:1px;text-align:right;padding-top:5px;}
-.journey-content{position:relative;padding:22px 25px;border:1px solid rgba(128,100,72,.65);background:rgba(255,255,255,.025);}
-.journey-content::before{content:"";position:absolute;left:-47px;top:28px;width:11px;height:11px;border-radius:50%;background:#e8c995;border:3px solid #1d1419;box-shadow:0 0 0 1px #806448;}
-.journey-content h3{color:#e8c995;font-size:17px;font-weight:400;margin-bottom:8px;}
-.journey-content p{color:#d8c9bb;font-size:13px;line-height:1.9;}
-.journey-content a{display:inline-block;margin-top:12px;color:#e8c995;font-size:11px;text-decoration:none;border-bottom:1px solid #806448;}
-.video-section{background:#21171c;}
-.video-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;max-width:1000px;margin:auto;}
-.video-card{overflow:hidden;border:1px solid #806448;background:#171014;text-align:left;}
-.video-cover{min-height:190px;display:flex;align-items:center;justify-content:center;background:linear-gradient(rgba(23,16,20,.25),rgba(23,16,20,.75)),url("images/couple2.jpg") center/cover no-repeat;}
-.video-play{width:55px;height:55px;display:flex;align-items:center;justify-content:center;border:1px solid #e8c995;border-radius:50%;color:#e8c995;font-size:22px;padding-left:4px;}
-.video-info{padding:18px 20px 22px;}
-.video-info h3{color:#e8c995;font-size:16px;font-weight:400;}
-.video-info p{color:#c9b8a8;font-size:11px;margin-top:5px;}
-.video-link{display:inline-block;margin-top:12px;color:#e8c995;font-size:11px;letter-spacing:1px;text-decoration:none;border-bottom:1px solid #806448;}
-.empty-note{color:#bca993;font-size:12px;margin:25px auto 0;max-width:650px;}
-.music-player{position:fixed;right:22px;bottom:22px;z-index:5000;width:290px;padding:14px;background:rgba(33,23,28,.98);border:1px solid #806448;box-shadow:0 8px 28px rgba(0,0,0,.4);}
-.music-player-label{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:12px;color:#e8c995;font-size:10px;letter-spacing:1px;}
-.playlist-song{width:100%;display:flex;align-items:center;gap:12px;padding:11px 9px;margin-top:7px;border:1px solid rgba(128,100,72,.45);background:rgba(255,255,255,.025);color:#f5e9d5;text-align:left;font-family:inherit;cursor:pointer;}
-.playlist-song:hover,.playlist-song.active{border-color:#e8c995;background:rgba(232,201,149,.10);}
-.song-number{color:#e8c995;font-size:12px;min-width:18px;}
-.song-info{display:flex;flex-direction:column;flex:1;}
-.song-title{color:#e8c995;font-size:11px;}
-.song-subtitle{color:#bca993;font-size:9px;margin-top:2px;}
-.song-play-icon{color:#e8c995;font-size:13px;}
-.music-player-toggle{position:fixed;right:22px;bottom:22px;z-index:5001;padding:11px 16px;border:1px solid #806448;background:#21171c;color:#e8c995;font-family:inherit;font-size:10px;letter-spacing:1px;cursor:pointer;}
-.music-player-toggle:hover{background:#e8c995;color:#171014;}
-.music-player.hidden{display:none;}
-.music-player-close{border:0;background:transparent;color:#e8c995;font-size:17px;line-height:1;cursor:pointer;}
-.music-player iframe{display:block;width:100%;aspect-ratio:16 / 9;border:0;margin-top:12px;}
-@media (max-width:600px){.music-player{right:12px;bottom:68px;width:min(290px,calc(100vw - 24px));}.music-player-toggle{right:12px;bottom:12px;}}
-.letter-card{max-width:720px;margin:22px auto;padding:30px;border:1px solid #806448;background:rgba(255,255,255,.025);}
-.letter-card p{color:#e0d2c3;font-size:14px;font-style:italic;line-height:2;}
-.letter-card span{display:block;margin-top:15px;color:#e8c995;font-size:12px;}
-.letter-button{display:inline-block;margin-top:28px;padding:12px 30px;border:1px solid #e8c995;color:#e8c995;text-decoration:none;font-size:12px;letter-spacing:1.5px;transition:all .3s;}
-.letter-button:hover{background:#e8c995;color:#171014;}
-footer{padding:38px 20px;text-align:center;background:#120d10;color:#bca993;font-size:11px;letter-spacing:1px;}
-footer p + p{margin-top:8px;color:#806448;}
-.lightbox{display:none;position:fixed;z-index:9999;inset:0;background:rgba(0,0,0,.96);justify-content:center;align-items:center;padding:50px 20px;}
-.lightbox.active{display:flex;}
-.lightbox img{max-width:92%;max-height:85vh;object-fit:contain;}
-.lightbox-close{position:absolute;top:15px;right:25px;color:white;background:none;border:none;font-size:40px;cursor:pointer;}
-@media (max-width:600px){
-header{min-height:75vh;padding:30px 18px;}
-header p{font-size:10px;letter-spacing:2px;}
-nav{gap:12px;padding:14px 8px;}
-nav a{font-size:9px;}
-section{padding:65px 6%;}
-.section-subtitle{margin-bottom:30px;}
-.gallery,.fan-grid,.video-grid{grid-template-columns:1fr;gap:16px;}
-.photo{height:350px;}
-.couple-photo{grid-column:span 1;height:260px;}
-.album-grid{grid-template-columns:1fr;gap:18px;}
-.album-card{height:300px;}
-.photo-caption{font-size:12px;}
-.letter-card{padding:22px 18px;}
-.lightbox img{max-width:96%;max-height:80vh;}
-.journey::before{left:78px;}
-.journey-item{grid-template-columns:60px 1fr;gap:35px;}
-.journey-date{font-size:10px;overflow-wrap:anywhere;}
-.journey-content{padding:17px 15px;}
-.journey-content::before{left:-42px;}
-.journey-content h3{font-size:15px;}
-.journey-content p{font-size:12px;}
-.video-cover{min-height:170px;}
-}
-</style>
-</head>
 
-<body>
+<!-- HEADER -->
 <header>
-<h1>A Little World of Us</h1>
-<p>A LITTLE SPACE MADE WITH LOVE</p>
-<div class="header-line"></div>
+  <h1>A Little World of Us</h1>
+  <p>A LITTLE SPACE MADE WITH LOVE</p>
+  <div class="header-line"></div>
 </header>
 
+<!-- NAVIGATION -->
 <nav>
-<a href="#home">HOME</a>
-<a href="#gallery">GALLERY</a>
-<a href="#journey">OUR JOURNEY</a>
-<a href="#video-moments">VIDEO MOMENTS</a>
-<a href="#fan-moments">FAN MOMENTS</a>
-<a href="#letters">LETTERS</a>
+  <a href="#home">HOME</a>
+  <a href="#gallery">GALLERY</a>
+  <a href="#journey">OUR JOURNEY</a>
+  <a href="#video-moments">VIDEO MOMENTS</a>
+  <a href="#fan-moments">FAN MOMENTS</a>
+  <a href="#letters">LETTERS</a>
 </nav>
 
+<!-- HOME -->
 <section id="home">
-<div class="intro">
-<h2 class="section-title">Welcome to Our Little World</h2>
-<p class="section-subtitle">A little corner dedicated to Kim Tuyến & Đồng Ánh Quỳnh</p>
-<div class="intro-divider"></div>
-<p>Some moments deserve to be remembered, some stories deserve to be told, and some people make the world a little more beautiful.</p>
-<p>This little space is made with love, celebrating the beautiful moments, memories and journeys of Kim Tuyến and Đồng Ánh Quỳnh.</p>
-</div>
+  <div class="intro">
+    <h2 class="section-title">Welcome to Our Little World</h2>
 
-<div class="gallery" style="margin-top:50px;">
-<div class="photo solo-photo kimtuyen-photo">
-<img src="images/kimtuyen1.jpg" alt="Kim Tuyến" onclick="openLightbox(this)" loading="lazy">
-<span class="photo-caption">A timeless elegance</span>
-</div>
-<div class="photo solo-photo kimtuyen-photo">
-<img src="images/kimtuyen2.jpg" alt="Kim Tuyến" onclick="openLightbox(this)" loading="lazy">
-<span class="photo-caption">Grace in every moment</span>
-</div>
-<div class="photo solo-photo daq-photo">
-<img src="images/daq1.jpg" alt="Đồng Ánh Quỳnh" onclick="openLightbox(this)" loading="lazy">
-<span class="photo-caption">A soul that shines</span>
-</div>
-<div class="photo solo-photo daq-photo">
-<img src="images/daq2.jpg" alt="Đồng Ánh Quỳnh" onclick="openLightbox(this)" loading="lazy">
-<span class="photo-caption">Born to captivate</span>
-</div>
-<div class="photo couple-photo">
-<img src="images/couple1.jpg" alt="Kim Tuyến and Đồng Ánh Quỳnh" onclick="openLightbox(this)" loading="lazy">
-<span class="photo-caption">Two hearts, one story</span>
-</div>
-<div class="photo couple-photo">
-<img src="images/couple2.jpg" alt="Kim Tuyến and Đồng Ánh Quỳnh" onclick="openLightbox(this)" loading="lazy">
-<span class="photo-caption">Moments worth keeping</span>
-</div>
-</div>
+    <p class="section-subtitle">
+      A little corner dedicated to Kim Tuyến & Đồng Ánh Quỳnh
+    </p>
+
+    <div class="intro-divider"></div>
+
+    <p>
+      Some moments deserve to be remembered, some stories deserve to be told,
+      and some people make the world a little more beautiful.
+    </p>
+
+    <p>
+      This little space is made with love, celebrating the beautiful moments,
+      memories and journeys of Kim Tuyến and Đồng Ánh Quỳnh.
+    </p>
+  </div>
+
+  <div class="gallery" style="margin-top:50px;">
+
+    <div class="photo solo-photo kimtuyen-photo">
+      <img src="images/kimtuyen1.jpg" alt="Kim Tuyến" onclick="openLightbox(this)" loading="lazy">
+      <span class="photo-caption">A timeless elegance</span>
+    </div>
+
+    <div class="photo solo-photo kimtuyen-photo">
+      <img src="images/kimtuyen2.jpg" alt="Kim Tuyến" onclick="openLightbox(this)" loading="lazy">
+      <span class="photo-caption">Grace in every moment</span>
+    </div>
+
+    <div class="photo solo-photo daq-photo">
+      <img src="images/daq1.jpg" alt="Đồng Ánh Quỳnh" onclick="openLightbox(this)" loading="lazy">
+      <span class="photo-caption">A soul that shines</span>
+    </div>
+
+    <div class="photo solo-photo daq-photo">
+      <img src="images/daq2.jpg" alt="Đồng Ánh Quỳnh" onclick="openLightbox(this)" loading="lazy">
+      <span class="photo-caption">Born to captivate</span>
+    </div>
+
+    <div class="photo couple-photo">
+      <img src="images/couple1.jpg" alt="Kim Tuyến and Đồng Ánh Quỳnh" onclick="openLightbox(this)" loading="lazy">
+      <span class="photo-caption">Two hearts, one story</span>
+    </div>
+
+    <div class="photo couple-photo">
+      <img src="images/couple2.jpg" alt="Kim Tuyến and Đồng Ánh Quỳnh" onclick="openLightbox(this)" loading="lazy">
+      <span class="photo-caption">Moments worth keeping</span>
+    </div>
+
+  </div>
 </section>
 
+<!-- GALLERY -->
 <section id="gallery">
-<h2 class="section-title">Our Gallery</h2>
-<p class="section-subtitle">A collection of moments we treasure</p>
-<div id="albumList" class="album-grid">
-<div class="album-card" onclick="openAlbum('kimtuyenAlbum')">
-<img src="images/kimtuyen1.jpg" alt="Kim Tuyến album">
-<div class="album-info"><h3>Kim Tuyến</h3><p>HER BEAUTIFUL MOMENTS</p></div>
-</div>
-<div class="album-card" onclick="openAlbum('daqAlbum')">
-<img src="images/daq1.jpg" alt="Đồng Ánh Quỳnh album">
-<div class="album-info"><h3>Đồng Ánh Quỳnh</h3><p>HER BEAUTIFUL MOMENTS</p></div>
-</div>
-<div class="album-card" onclick="openAlbum('coupleAlbum')" style="grid-column:1 / -1;">
-<img src="images/couple1.jpg" alt="Together album">
-<div class="album-info"><h3>Together</h3><p>MOMENTS OF TWO</p></div>
-</div>
-</div>
+  <h2 class="section-title">Our Gallery</h2>
+  <p class="section-subtitle">A collection of moments we treasure</p>
 
-<div id="kimtuyenAlbum" class="album-detail">
-<button class="back-button" onclick="backToAlbums()">← BACK TO ALBUMS</button>
-<div class="album-heading"><h3>Kim Tuyến</h3><p>A collection of her beautiful moments</p></div>
-<div class="gallery">
-<div class="photo kimtuyen-photo">
-<img src="images/kimtuyen1.jpg" alt="Kim Tuyến" onclick="openLightbox(this)">
-<span class="photo-caption">A timeless elegance</span>
-</div>
-<div class="photo kimtuyen-photo">
-<img src="images/kimtuyen2.jpg" alt="Kim Tuyến" onclick="openLightbox(this)">
-<span class="photo-caption">Grace in every moment</span>
-</div>
-<!-- ADD MORE KIM TUYEN PHOTOS HERE -->
-</div>
-</div>
+  <div id="albumList" class="album-grid">
 
-<div id="daqAlbum" class="album-detail">
-<button class="back-button" onclick="backToAlbums()">← BACK TO ALBUMS</button>
-<div class="album-heading"><h3>Đồng Ánh Quỳnh</h3><p>A collection of her beautiful moments</p></div>
-<div class="gallery">
-<div class="photo daq-photo">
-<img src="images/daq1.jpg" alt="Đồng Ánh Quỳnh" onclick="openLightbox(this)">
-<span class="photo-caption">A soul that shines</span>
-</div>
-<div class="photo daq-photo">
-<img src="images/daq2.jpg" alt="Đồng Ánh Quỳnh" onclick="openLightbox(this)">
-<span class="photo-caption">Born to captivate</span>
-</div>
-<!-- ADD MORE DONG ANH QUYNH PHOTOS HERE -->
-</div>
-</div>
+    <div class="album-card" onclick="openAlbum('kimtuyenAlbum')">
+      <img src="images/kimtuyen1.jpg" alt="Kim Tuyến album">
+      <div class="album-info">
+        <h3>Kim Tuyến</h3>
+        <p>HER BEAUTIFUL MOMENTS</p>
+      </div>
+    </div>
 
-<div id="coupleAlbum" class="album-detail">
-<button class="back-button" onclick="backToAlbums()">← BACK TO ALBUMS</button>
-<div class="album-heading"><h3>Together</h3><p>Moments worth keeping</p></div>
-<div class="gallery">
-<div class="photo couple-photo">
-<img src="images/couple1.jpg" alt="Kim Tuyến and Đồng Ánh Quỳnh" onclick="openLightbox(this)">
-<span class="photo-caption">Two hearts, one story</span>
-</div>
-<div class="photo couple-photo">
-<img src="images/couple2.jpg" alt="Kim Tuyến and Đồng Ánh Quỳnh" onclick="openLightbox(this)">
-<span class="photo-caption">Moments worth keeping</span>
-</div>
-<!-- ADD MORE COUPLE PHOTOS HERE -->
-</div>
-</div>
+    <div class="album-card" onclick="openAlbum('daqAlbum')">
+      <img src="images/daq1.jpg" alt="Đồng Ánh Quỳnh album">
+      <div class="album-info">
+        <h3>Đồng Ánh Quỳnh</h3>
+        <p>HER BEAUTIFUL MOMENTS</p>
+      </div>
+    </div>
+
+    <div class="album-card" onclick="openAlbum('coupleAlbum')" style="grid-column:1 / -1;">
+      <img src="images/couple1.jpg" alt="Together album">
+      <div class="album-info">
+        <h3>Together</h3>
+        <p>MOMENTS OF TWO</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- KIM TUYEN ALBUM -->
+  <div id="kimtuyenAlbum" class="album-detail">
+    <button class="back-button" onclick="backToAlbums()">← BACK TO ALBUMS</button>
+
+    <div class="album-heading">
+      <h3>Kim Tuyến</h3>
+      <p>A collection of her beautiful moments</p>
+    </div>
+
+    <div class="gallery">
+      <div class="photo kimtuyen-photo">
+        <img src="images/kimtuyen1.jpg" alt="Kim Tuyến" onclick="openLightbox(this)">
+        <span class="photo-caption">A timeless elegance</span>
+      </div>
+
+      <div class="photo kimtuyen-photo">
+        <img src="images/kimtuyen2.jpg" alt="Kim Tuyến" onclick="openLightbox(this)">
+        <span class="photo-caption">Grace in every moment</span>
+      </div>
+
+      <!-- ADD MORE KIM TUYEN PHOTOS HERE -->
+    </div>
+  </div>
+
+  <!-- DONG ANH QUYNH ALBUM -->
+  <div id="daqAlbum" class="album-detail">
+    <button class="back-button" onclick="backToAlbums()">← BACK TO ALBUMS</button>
+
+    <div class="album-heading">
+      <h3>Đồng Ánh Quỳnh</h3>
+      <p>A collection of her beautiful moments</p>
+    </div>
+
+    <div class="gallery">
+      <div class="photo daq-photo">
+        <img src="images/daq1.jpg" alt="Đồng Ánh Quỳnh" onclick="openLightbox(this)">
+        <span class="photo-caption">A soul that shines</span>
+      </div>
+
+      <div class="photo daq-photo">
+        <img src="images/daq2.jpg" alt="Đồng Ánh Quỳnh" onclick="openLightbox(this)">
+        <span class="photo-caption">Born to captivate</span>
+      </div>
+
+      <!-- ADD MORE DONG ANH QUYNH PHOTOS HERE -->
+    </div>
+  </div>
+
+  <!-- COUPLE ALBUM -->
+  <div id="coupleAlbum" class="album-detail">
+    <button class="back-button" onclick="backToAlbums()">← BACK TO ALBUMS</button>
+
+    <div class="album-heading">
+      <h3>Together</h3>
+      <p>Moments worth keeping</p>
+    </div>
+
+    <div class="gallery">
+      <div class="photo couple-photo">
+        <img src="images/couple1.jpg" alt="Kim Tuyến and Đồng Ánh Quỳnh" onclick="openLightbox(this)">
+        <span class="photo-caption">Two hearts, one story</span>
+      </div>
+
+      <div class="photo couple-photo">
+        <img src="images/couple2.jpg" alt="Kim Tuyến and Đồng Ánh Quỳnh" onclick="openLightbox(this)">
+        <span class="photo-caption">Moments worth keeping</span>
+      </div>
+
+      <!-- ADD MORE COUPLE PHOTOS HERE -->
+    </div>
+  </div>
 </section>
 
+<!-- OUR JOURNEY -->
 <section id="journey" class="journey-section">
-<h2 class="section-title">Our Journey</h2>
-<p class="section-subtitle">Every date holds a memory, every moment becomes a story</p>
-<div class="journey">
-<!-- JOURNEY ITEM TEMPLATE
-Copy this block to add a new memory.
-<div class="journey-item">
-<div class="journey-date">DD.MM.YYYY</div>
-<div class="journey-content">
-<h3>Event or Memory Title</h3>
-<p>Write a short description of this special moment.</p>
-<a href="PASTE-LINK-HERE" target="_blank" rel="noopener noreferrer">VIEW MORE</a>
-</div>
-</div>
--->
-<div class="journey-item">
-<div class="journey-date">A NEW<br>MEMORY</div>
-<div class="journey-content">
-<h3>The Beginning of a Story</h3>
-<p>This is where we will keep the special dates, shared events and unforgettable memories of their journey.</p>
-</div>
-</div>
-</div>
-<p class="empty-note">More memories will find their place here, one day at a time.</p>
+  <h2 class="section-title">Our Journey</h2>
+
+  <p class="section-subtitle">
+    Every date holds a memory, every moment becomes a story
+  </p>
+
+  <div class="journey">
+
+    <!-- JOURNEY ITEM TEMPLATE
+    Copy this block to add a new memory.
+
+    <div class="journey-item">
+      <div class="journey-date">DD.MM.YYYY</div>
+      <div class="journey-content">
+        <h3>Event or Memory Title</h3>
+        <p>Write a short description of this special moment.</p>
+        <a href="PASTE-LINK-HERE" target="_blank" rel="noopener noreferrer">VIEW MORE</a>
+      </div>
+    </div>
+    -->
+
+    <div class="journey-item">
+      <div class="journey-date">A NEW<br>MEMORY</div>
+
+      <div class="journey-content">
+        <h3>The Beginning of a Story</h3>
+        <p>
+          This is where we will keep the special dates, shared events
+          and unforgettable memories of their journey.
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+  <p class="empty-note">
+    More memories will find their place here, one day at a time.
+  </p>
 </section>
 
+<!-- VIDEO MOMENTS -->
 <section id="video-moments" class="video-section">
-<h2 class="section-title">Video Moments</h2>
-<p class="section-subtitle">Little clips, beautiful memories, moments on repeat</p>
-<div class="video-grid">
-<!-- TIKTOK VIDEO TEMPLATE
-Copy this card for each new TikTok clip.
-Replace the TikTok link, title and description.
-<div class="video-card">
-<a href="PASTE-TIKTOK-LINK-HERE" target="_blank" rel="noopener noreferrer" class="video-cover">
-<span class="video-play">▶</span>
-</a>
-<div class="video-info">
-<h3>Video Title</h3>
-<p>Short description or category</p>
-<a class="video-link" href="PASTE-TIKTOK-LINK-HERE" target="_blank" rel="noopener noreferrer">WATCH ON TIKTOK ↗</a>
-</div>
-</div>
--->
-<div class="video-card">
-<div class="video-cover"><span class="video-play">▶</span></div>
-<div class="video-info">
-<h3>Our Moments Together</h3>
-<p>A space for memorable clips of the two</p>
-</div>
-</div>
-<div class="video-card">
-<div class="video-cover"><span class="video-play">▶</span></div>
-<div class="video-info">
-<h3>Behind the Scenes</h3>
-<p>Behind-the-scenes moments and little memories</p>
-</div>
-</div>
-</div>
-<p class="empty-note">TikTok moments will be added here. Stay tuned for more!</p>
+  <h2 class="section-title">Video Moments</h2>
+
+  <p class="section-subtitle">
+    Little clips, beautiful memories, moments on repeat
+  </p>
+
+  <div class="video-grid">
+
+    <!-- TIKTOK VIDEO TEMPLATE
+    Copy this card for each new TikTok clip.
+    Replace the TikTok link, title and description.
+
+    <div class="video-card">
+      <a href="PASTE-TIKTOK-LINK-HERE"
+         target="_blank"
+         rel="noopener noreferrer"
+         class="video-cover">
+        <span class="video-play">▶</span>
+      </a>
+
+      <div class="video-info">
+        <h3>Video Title</h3>
+        <p>Short description or category</p>
+        <a class="video-link"
+           href="PASTE-TIKTOK-LINK-HERE"
+           target="_blank"
+           rel="noopener noreferrer">WATCH ON TIKTOK ↗</a>
+      </div>
+    </div>
+    -->
+
+    <div class="video-card">
+      <div class="video-cover">
+        <span class="video-play">▶</span>
+      </div>
+
+      <div class="video-info">
+        <h3>Our Moments Together</h3>
+        <p>A space for memorable clips of the two</p>
+      </div>
+    </div>
+
+    <div class="video-card">
+      <div class="video-cover">
+        <span class="video-play">▶</span>
+      </div>
+
+      <div class="video-info">
+        <h3>Behind the Scenes</h3>
+        <p>Behind-the-scenes moments and little memories</p>
+      </div>
+    </div>
+
+  </div>
+
+  <p class="empty-note">
+    TikTok moments will be added here. Stay tuned for more!
+  </p>
 </section>
 
+<!-- FAN MOMENTS -->
 <section id="fan-moments" class="fan-section">
-<h2 class="section-title">Our Hearts</h2>
-<p class="section-subtitle">A little space for the people behind the love</p>
-<p class="fan-note">Celebrating fan projects, special gatherings, precious memories and moments shared by the fandom.</p>
-<div class="fan-grid">
-<!-- ADD FAN PHOTOS HERE -->
-</div>
-<p style="color:#bca993;font-size:12px;margin-top:25px;">Made possible by every little act of love.</p>
+  <h2 class="section-title">Our Hearts</h2>
+
+  <p class="section-subtitle">
+    A little space for the people behind the love
+  </p>
+
+  <p class="fan-note">
+    Celebrating fan projects, special gatherings, precious memories
+    and moments shared by the fandom.
+  </p>
+
+  <div class="fan-grid">
+    <!-- ADD FAN PHOTOS HERE -->
+  </div>
+
+  <p style="color:#bca993;font-size:12px;margin-top:25px;">
+    Made possible by every little act of love.
+  </p>
 </section>
 
+<!-- LETTERS -->
 <section id="letters" class="letters">
-<h2 class="section-title">Letters from Fans</h2>
-<p class="section-subtitle">Little words, endless affection</p>
-<div class="letter-card">
-<p>"Thank you for bringing so much beauty and inspiration into our lives. We will always be cheering for you."</p>
-<span>— With love, a fan</span>
-</div>
-<div class="letter-card">
-<p>"May your journey be filled with beautiful opportunities, unforgettable memories and endless happiness."</p>
-<span>— Always supporting you</span>
-</div>
-<a href="https://forms.gle/uPp9XkVFNaRfFdao9" target="_blank" rel="noopener noreferrer" class="letter-button">SEND YOUR LETTER</a>
+  <h2 class="section-title">Letters from Fans</h2>
+
+  <p class="section-subtitle">
+    Little words, endless affection
+  </p>
+
+  <div class="letter-card">
+    <p>
+      "Thank you for bringing so much beauty and inspiration into our lives.
+      We will always be cheering for you."
+    </p>
+    <span>— With love, a fan</span>
+  </div>
+
+  <div class="letter-card">
+    <p>
+      "May your journey be filled with beautiful opportunities,
+      unforgettable memories and endless happiness."
+    </p>
+    <span>— Always supporting you</span>
+  </div>
+
+  <a
+    href="https://forms.gle/pU9xkVFNaRfFdao9"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="letter-button">
+    SEND YOUR LETTER
+  </a>
 </section>
 
 <!-- MUSIC PLAYLIST -->
 <div class="music-player hidden" id="musicPlayer">
-<div class="music-player-label">
-<span>♫ A LITTLE PLAYLIST</span>
-<button class="music-player-close" id="musicPlayerClose" aria-label="Close music player">&times;</button>
-</div>
-<button class="playlist-song" type="button" data-video="JFLLHYWkIxc">
-<span class="song-number">01</span>
-<span class="song-info">
-<span class="song-title">Theme Song</span>
-<span class="song-subtitle">Our little theme song</span>
-</span>
-<span class="song-play-icon">▶</span>
-</button>
-<button class="playlist-song" type="button" data-video="dfeGNIfSyGk">
-<span class="song-number">02</span>
-<span class="song-info">
-<span class="song-title">Phóng Zìn Zìn</span>
-<span class="song-subtitle">A little music moment</span>
-</span>
-<span class="song-play-icon">▶</span>
-</button>
-<button class="playlist-song" type="button" data-video="7t00g-TGu8s">
-<span class="song-number">03</span>
-<span class="song-info">
-<span class="song-title">Single Mom</span>
-<span class="song-subtitle">A little music moment</span>
-</span>
-<span class="song-play-icon">▶</span>
-</button>
-<iframe id="youtubeMusic" src="" title="A Little World of Us playlist" allow="autoplay; encrypted-media; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+  <div class="music-player-label">
+    <span>♫ A LITTLE PLAYLIST</span>
+
+    <button
+      class="music-player-close"
+      id="musicPlayerClose"
+      aria-label="Close music player">
+      &times;
+    </button>
+  </div>
+
+  <button class="playlist-song" type="button" data-video="JFLLHYWkIxc">
+    <span class="song-number">01</span>
+
+    <span class="song-info">
+      <span class="song-title">Theme Song</span>
+      <span class="song-subtitle">Our little theme song</span>
+    </span>
+
+    <span class="song-play-icon">▶</span>
+  </button>
+
+  <button class="playlist-song" type="button" data-video="dfeGNIfSyGk">
+    <span class="song-number">02</span>
+
+    <span class="song-info">
+      <span class="song-title">Phóng Zìn Zìn</span>
+      <span class="song-subtitle">A little music moment</span>
+    </span>
+
+    <span class="song-play-icon">▶</span>
+  </button>
+
+  <button class="playlist-song" type="button" data-video="7t00g-TGu8s">
+    <span class="song-number">03</span>
+
+    <span class="song-info">
+      <span class="song-title">Single Mom</span>
+      <span class="song-subtitle">A little music moment</span>
+    </span>
+
+    <span class="song-play-icon">▶</span>
+  </button>
+
+  <iframe
+    id="youtubeMusic"
+    src=""
+    title="A Little World of Us playlist"
+    allow="autoplay; encrypted-media; picture-in-picture"
+    referrerpolicy="strict-origin-when-cross-origin"
+    allowfullscreen>
+  </iframe>
+
 </div>
 
-<button class="music-player-toggle" id="musicPlayerToggle" type="button" aria-expanded="false">♫ PLAY MUSIC</button>
+<button
+  class="music-player-toggle"
+  id="musicPlayerToggle"
+  type="button"
+  aria-expanded="false">
+  ♫ PLAY MUSIC
+</button>
 
+<!-- FOOTER -->
 <footer>
-<p>Made with love for Kim Tuyến & Đồng Ánh Quỳnh</p>
-<p>© 2026 A Little World of Us</p>
+  <p>Made with love for Kim Tuyến & Đồng Ánh Quỳnh</p>
+  <p>© 2026 A Little World of Us</p>
 </footer>
 
+<!-- LIGHTBOX -->
 <div class="lightbox" id="lightbox">
-<button class="lightbox-close" id="lightboxClose" aria-label="Close image">&times;</button>
-<img id="lightboxImage" src="" alt="Enlarged photo">
+  <button
+    class="lightbox-close"
+    id="lightboxClose"
+    aria-label="Close image">
+    &times;
+  </button>
+
+  <img id="lightboxImage" src="" alt="Enlarged photo">
 </div>
 
+<!-- JAVASCRIPT -->
 <script>
 /* ALBUM NAVIGATION */
 function openAlbum(albumId) {
-document.getElementById("albumList").style.display = "none";
-document.querySelectorAll(".album-detail").forEach(album => {
-album.classList.remove("active");
-});
-document.getElementById(albumId).classList.add("active");
+  document.getElementById("albumList").style.display = "none";
+
+  document.querySelectorAll(".album-detail").forEach(album => {
+    album.classList.remove("active");
+  });
+
+  document.getElementById(albumId).classList.add("active");
 }
 
 function backToAlbums() {
-document.querySelectorAll(".album-detail").forEach(album => {
-album.classList.remove("active");
-});
-document.getElementById("albumList").style.display = "grid";
+  document.querySelectorAll(".album-detail").forEach(album => {
+    album.classList.remove("active");
+  });
+
+  document.getElementById("albumList").style.display = "grid";
 }
 
 /* LIGHTBOX */
@@ -488,29 +1340,29 @@ const lightboxImage = document.getElementById("lightboxImage");
 const closeButton = document.getElementById("lightboxClose");
 
 function openLightbox(img) {
-lightboxImage.src = img.src;
-lightboxImage.alt = img.alt;
-lightbox.classList.add("active");
-document.body.style.overflow = "hidden";
+  lightboxImage.src = img.src;
+  lightboxImage.alt = img.alt;
+  lightbox.classList.add("active");
+  document.body.style.overflow = "hidden";
 }
 
 function closeLightbox() {
-lightbox.classList.remove("active");
-document.body.style.overflow = "";
+  lightbox.classList.remove("active");
+  document.body.style.overflow = "";
 }
 
 lightbox.addEventListener("click", function(event) {
-if (event.target === lightbox) {
-closeLightbox();
-}
+  if (event.target === lightbox) {
+    closeLightbox();
+  }
 });
 
 closeButton.addEventListener("click", closeLightbox);
 
 document.addEventListener("keydown", function(event) {
-if (event.key === "Escape") {
-closeLightbox();
-}
+  if (event.key === "Escape") {
+    closeLightbox();
+  }
 });
 
 /* YOUTUBE MUSIC PLAYLIST */
@@ -519,11 +1371,12 @@ const musicPlayerToggle = document.getElementById("musicPlayerToggle");
 const musicPlayerClose = document.getElementById("musicPlayerClose");
 const youtubeMusic = document.getElementById("youtubeMusic");
 const playlistSongs = document.querySelectorAll(".playlist-song");
+
 const musicWelcome = document.getElementById("musicWelcome");
 const musicWelcomePlay = document.getElementById("musicWelcomePlay");
 const musicWelcomeLater = document.getElementById("musicWelcomeLater");
 
-// Tap to listen
+/* TAP TO LISTEN */
 musicWelcomePlay.addEventListener("click", function() {
   musicWelcome.classList.add("hidden");
 
@@ -531,37 +1384,53 @@ musicWelcomePlay.addEventListener("click", function() {
   musicPlayerToggle.style.display = "none";
   musicPlayerToggle.setAttribute("aria-expanded", "true");
 
-  // Play the first song
+  // Start playing the first song after user interaction
   playlistSongs[0].click();
 });
 
-// Maybe later
+/* MAYBE LATER */
 musicWelcomeLater.addEventListener("click", function() {
   musicWelcome.classList.add("hidden");
 });
-  
+
+/* OPEN PLAYLIST */
 musicPlayerToggle.addEventListener("click", function() {
-musicPlayer.classList.remove("hidden");
-musicPlayerToggle.style.display = "none";
-musicPlayerToggle.setAttribute("aria-expanded", "true");
+  musicPlayer.classList.remove("hidden");
+  musicPlayerToggle.style.display = "none";
+  musicPlayerToggle.setAttribute("aria-expanded", "true");
 });
 
+/* SELECT SONG */
 playlistSongs.forEach(song => {
-song.addEventListener("click", function() {
-const videoId = this.dataset.video;
-youtubeMusic.src = "https://www.youtube.com/embed/" + videoId + "?autoplay=1&controls=1&playsinline=1";
-playlistSongs.forEach(item => item.classList.remove("active"));
-this.classList.add("active");
-});
+  song.addEventListener("click", function() {
+    const videoId = this.dataset.video;
+
+    youtubeMusic.src =
+      "https://www.youtube.com/embed/" +
+      videoId +
+      "?autoplay=1&controls=1&playsinline=1";
+
+    playlistSongs.forEach(item => {
+      item.classList.remove("active");
+    });
+
+    this.classList.add("active");
+  });
 });
 
+/* CLOSE PLAYER AND STOP MUSIC */
 musicPlayerClose.addEventListener("click", function() {
-youtubeMusic.src = "";
-musicPlayer.classList.add("hidden");
-musicPlayerToggle.style.display = "block";
-musicPlayerToggle.setAttribute("aria-expanded", "false");
-playlistSongs.forEach(item => item.classList.remove("active"));
+  youtubeMusic.src = "";
+
+  musicPlayer.classList.add("hidden");
+  musicPlayerToggle.style.display = "block";
+  musicPlayerToggle.setAttribute("aria-expanded", "false");
+
+  playlistSongs.forEach(item => {
+    item.classList.remove("active");
+  });
 });
 </script>
+
 </body>
 </html>
