@@ -454,54 +454,81 @@ section {
   max-width:650px;
 }
 
-/* THEME SONG */
-.music-section {
-  padding:65px 8%;
-  background:#171014;
-  border-top:1px solid rgba(128,100,72,.4);
-}
-
-.music-box {
-  max-width:650px;
-  margin:auto;
-  padding:30px 25px;
+/* FLOATING YOUTUBE MUSIC PLAYER */
+.music-player {
+  position:fixed;
+  right:22px;
+  bottom:22px;
+  z-index:5000;
+  width:250px;
+  padding:10px;
+  background:rgba(33,23,28,.97);
   border:1px solid #806448;
-  background:rgba(255,255,255,.025);
+  box-shadow:0 8px 28px rgba(0,0,0,.4);
 }
 
-.music-icon {
-  width:75px;
-  height:75px;
+.music-player-label {
   display:flex;
-  justify-content:center;
   align-items:center;
-  margin:0 auto 18px;
-  border:1px solid #806448;
-  border-radius:50%;
-  color:#e8c995;
-  font-size:30px;
-}
-
-.music-box h3 {
-  color:#e8c995;
-  font-size:19px;
-  font-weight:400;
-}
-
-.music-box p {
-  color:#c9b8a8;
-  font-size:12px;
-  margin-top:8px;
-}
-
-.music-status {
-  display:inline-block;
-  margin-top:18px;
-  padding:7px 18px;
-  border:1px solid #806448;
+  justify-content:space-between;
+  gap:10px;
+  margin-bottom:8px;
   color:#e8c995;
   font-size:10px;
-  letter-spacing:1.5px;
+  letter-spacing:1px;
+}
+
+.music-player iframe {
+  display:block;
+  width:100%;
+  aspect-ratio:16 / 9;
+  border:0;
+}
+
+.music-player-toggle {
+  position:fixed;
+  right:22px;
+  bottom:22px;
+  z-index:5001;
+  padding:11px 16px;
+  border:1px solid #806448;
+  background:#21171c;
+  color:#e8c995;
+  font-family:inherit;
+  font-size:10px;
+  letter-spacing:1px;
+  cursor:pointer;
+}
+
+.music-player-toggle:hover {
+  background:#e8c995;
+  color:#171014;
+}
+
+.music-player.hidden {
+  display:none;
+}
+
+.music-player-close {
+  border:0;
+  background:transparent;
+  color:#e8c995;
+  font-size:17px;
+  line-height:1;
+  cursor:pointer;
+}
+
+@media (max-width:600px) {
+  .music-player {
+    right:12px;
+    bottom:68px;
+    width:min(250px, calc(100vw - 24px));
+  }
+
+  .music-player-toggle {
+    right:12px;
+    bottom:12px;
+  }
 }
 
 /* LETTERS */
@@ -685,7 +712,6 @@ footer p + p {
   <a href="#video-moments">VIDEO MOMENTS</a>
   <a href="#fan-moments">FAN MOMENTS</a>
   <a href="#letters">LETTERS</a>
-  <a href="#theme-song">THEME SONG</a>
 </nav>
 
 <!-- HOME -->
@@ -995,23 +1021,25 @@ footer p + p {
   </a>
 </section>
 
-<!-- THEME SONG -->
-<section id="theme-song" class="music-section">
-  <h2 class="section-title">Our Theme Song</h2>
-  <p class="section-subtitle">
-    A melody for the memories we keep
-  </p>
-
-  <div class="music-box">
-    <div class="music-icon">♫</div>
-    <h3>A Little Melody for Us</h3>
-    <p>
-      Our special song will be added here soon.
-      Until then, let the memories speak.
-    </p>
-    <span class="music-status">COMING SOON</span>
+<!-- FLOATING YOUTUBE MUSIC PLAYER -->
+<div class="music-player hidden" id="musicPlayer">
+  <div class="music-player-label">
+    <span>♫ OUR LITTLE THEME SONG</span>
+    <button class="music-player-close" id="musicPlayerClose" aria-label="Close music player">&times;</button>
   </div>
-</section>
+
+  <iframe
+    src="https://www.youtube.com/embed/JFLLHYWkIxc?autoplay=1&controls=1&loop=1&playlist=JFLLHYWkIxc&playsinline=1"
+    title="A Little World of Us - Theme Song"
+    allow="autoplay; encrypted-media; picture-in-picture"
+    referrerpolicy="strict-origin-when-cross-origin"
+    allowfullscreen>
+  </iframe>
+</div>
+
+<button class="music-player-toggle" id="musicPlayerToggle" type="button" aria-expanded="false">
+  ♫ PLAY MUSIC
+</button>
 
 <!-- FOOTER -->
 <footer>
@@ -1074,6 +1102,23 @@ document.addEventListener("keydown", function(event) {
   if (event.key === "Escape") {
     closeLightbox();
   }
+});
+
+/* YOUTUBE MUSIC PLAYER */
+const musicPlayer = document.getElementById("musicPlayer");
+const musicPlayerToggle = document.getElementById("musicPlayerToggle");
+const musicPlayerClose = document.getElementById("musicPlayerClose");
+
+musicPlayerToggle.addEventListener("click", function() {
+  musicPlayer.classList.remove("hidden");
+  musicPlayerToggle.style.display = "none";
+  musicPlayerToggle.setAttribute("aria-expanded", "true");
+});
+
+musicPlayerClose.addEventListener("click", function() {
+  musicPlayer.classList.add("hidden");
+  musicPlayerToggle.style.display = "block";
+  musicPlayerToggle.setAttribute("aria-expanded", "false");
 });
 </script>
 
