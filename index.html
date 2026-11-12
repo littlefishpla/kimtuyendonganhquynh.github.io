@@ -589,13 +589,15 @@ section {
   cursor:pointer;
 }
 
-/* FLOATING YOUTUBE MUSIC PLAYLIST */
+/* FLOATING MP3 MUSIC PLAYLIST */
 .music-player {
   position:fixed;
   right:22px;
   bottom:22px;
   z-index:5000;
   width:290px;
+  max-height:85vh;
+  overflow-y:auto;
   padding:14px;
   background:rgba(33,23,28,.98);
   border:1px solid #806448;
@@ -681,12 +683,10 @@ section {
   cursor:pointer;
 }
 
-.music-player iframe {
+.music-player audio {
   display:block;
   width:100%;
-  aspect-ratio:16 / 9;
-  border:0;
-  margin-top:12px;
+  margin-top:15px;
 }
 
 /* LETTERS */
@@ -1167,6 +1167,7 @@ footer p + p {
     More memories will find their place here, one day at a time.
   </p>
 </section>
+
 <!-- VIDEO MOMENTS -->
 <section id="video-moments" class="video-section">
   <h2 class="section-title">Video Moments</h2>
@@ -1177,128 +1178,79 @@ footer p + p {
   <div class="video-grid">
 
     <div class="video-card">
-      <iframe
-        src="https://www.tiktok.com/player/v1/7690790556141767954"
-        title="TikTok video moment 1"
-        loading="lazy"
-        allow="fullscreen; encrypted-media; picture-in-picture"
-        allowfullscreen>
-      </iframe>
+      <iframe src="https://www.tiktok.com/player/v1/7690790556141767954"
+        title="TikTok video moment 1" loading="lazy"
+        allow="fullscreen; encrypted-media; picture-in-picture" allowfullscreen></iframe>
       <div class="video-info">
         <h3>Moment 01</h3>
         <p>A little moment from @kimdongmoments</p>
-        <a class="video-link"
-           href="https://www.tiktok.com/@kimdongmoments/video/7690790556141767954"
-           target="_blank"
-           rel="noopener noreferrer">WATCH ON TIKTOK ↗</a>
+        <a class="video-link" href="https://www.tiktok.com/@kimdongmoments/video/7690790556141767954" target="_blank" rel="noopener noreferrer">WATCH ON TIKTOK ↗</a>
       </div>
     </div>
 
     <div class="video-card">
-      <iframe
-        src="https://www.tiktok.com/player/v1/7682421355555376392"
-        title="TikTok video moment 2"
-        loading="lazy"
-        allow="fullscreen; encrypted-media; picture-in-picture"
-        allowfullscreen>
-      </iframe>
+      <iframe src="https://www.tiktok.com/player/v1/7682421355555376392"
+        title="TikTok video moment 2" loading="lazy"
+        allow="fullscreen; encrypted-media; picture-in-picture" allowfullscreen></iframe>
       <div class="video-info">
         <h3>Moment 02</h3>
         <p>A little moment from @kimdongmoments</p>
-        <a class="video-link"
-           href="https://www.tiktok.com/@kimdongmoments/video/7682421355555376392"
-           target="_blank"
-           rel="noopener noreferrer">WATCH ON TIKTOK ↗</a>
+        <a class="video-link" href="https://www.tiktok.com/@kimdongmoments/video/7682421355555376392" target="_blank" rel="noopener noreferrer">WATCH ON TIKTOK ↗</a>
       </div>
     </div>
 
     <div class="video-card">
-      <iframe
-        src="https://www.tiktok.com/player/v1/7685365769101708551"
-        title="TikTok video moment 3"
-        loading="lazy"
-        allow="fullscreen; encrypted-media; picture-in-picture"
-        allowfullscreen>
-      </iframe>
+      <iframe src="https://www.tiktok.com/player/v1/7685365769101708551"
+        title="TikTok video moment 3" loading="lazy"
+        allow="fullscreen; encrypted-media; picture-in-picture" allowfullscreen></iframe>
       <div class="video-info">
         <h3>Moment 03</h3>
         <p>A little moment from @kimdongmoments</p>
-        <a class="video-link"
-           href="https://www.tiktok.com/@kimdongmoments/video/7685365769101708551"
-           target="_blank"
-           rel="noopener noreferrer">WATCH ON TIKTOK ↗</a>
+        <a class="video-link" href="https://www.tiktok.com/@kimdongmoments/video/7685365769101708551" target="_blank" rel="noopener noreferrer">WATCH ON TIKTOK ↗</a>
       </div>
     </div>
 
     <div class="video-card">
-      <iframe
-        src="https://www.tiktok.com/player/v1/7676727558334876946"
-        title="TikTok video moment 4"
-        loading="lazy"
-        allow="fullscreen; encrypted-media; picture-in-picture"
-        allowfullscreen>
-      </iframe>
+      <iframe src="https://www.tiktok.com/player/v1/7676727558334876946"
+        title="TikTok video moment 4" loading="lazy"
+        allow="fullscreen; encrypted-media; picture-in-picture" allowfullscreen></iframe>
       <div class="video-info">
         <h3>Moment 04</h3>
         <p>A little moment from @kimdongmoments</p>
-        <a class="video-link"
-           href="https://www.tiktok.com/@kimdongmoments/video/7676727558334876946"
-           target="_blank"
-           rel="noopener noreferrer">WATCH ON TIKTOK ↗</a>
+        <a class="video-link" href="https://www.tiktok.com/@kimdongmoments/video/7676727558334876946" target="_blank" rel="noopener noreferrer">WATCH ON TIKTOK ↗</a>
       </div>
     </div>
 
     <div class="video-card">
-      <iframe
-        src="https://www.tiktok.com/player/v1/7680059534357974279"
-        title="TikTok video moment 5"
-        loading="lazy"
-        allow="fullscreen; encrypted-media; picture-in-picture"
-        allowfullscreen>
-      </iframe>
+      <iframe src="https://www.tiktok.com/player/v1/7680059534357974279"
+        title="TikTok video moment 5" loading="lazy"
+        allow="fullscreen; encrypted-media; picture-in-picture" allowfullscreen></iframe>
       <div class="video-info">
         <h3>Moment 05</h3>
         <p>A little moment from @kimdongmoments</p>
-        <a class="video-link"
-           href="https://www.tiktok.com/@kimdongmoments/video/7680059534357974279"
-           target="_blank"
-           rel="noopener noreferrer">WATCH ON TIKTOK ↗</a>
+        <a class="video-link" href="https://www.tiktok.com/@kimdongmoments/video/7680059534357974279" target="_blank" rel="noopener noreferrer">WATCH ON TIKTOK ↗</a>
       </div>
     </div>
 
     <div class="video-card">
-      <iframe
-        src="https://www.tiktok.com/player/v1/7706427589811768594"
-        title="TikTok video moment 6"
-        loading="lazy"
-        allow="fullscreen; encrypted-media; picture-in-picture"
-        allowfullscreen>
-      </iframe>
+      <iframe src="https://www.tiktok.com/player/v1/7706427589811768594"
+        title="TikTok video moment 6" loading="lazy"
+        allow="fullscreen; encrypted-media; picture-in-picture" allowfullscreen></iframe>
       <div class="video-info">
         <h3>Moment 06</h3>
         <p>A little moment from @kimdongmoments</p>
-        <a class="video-link"
-           href="https://www.tiktok.com/@kimdongmoments/video/7706427589811768594"
-           target="_blank"
-           rel="noopener noreferrer">WATCH ON TIKTOK ↗</a>
+        <a class="video-link" href="https://www.tiktok.com/@kimdongmoments/video/7706427589811768594" target="_blank" rel="noopener noreferrer">WATCH ON TIKTOK ↗</a>
       </div>
     </div>
 
     <div class="video-card">
-      <iframe
-        src="https://www.tiktok.com/player/v1/7671687538267999495"
-        title="TikTok video moment 7"
-        loading="lazy"
-        allow="fullscreen; encrypted-media; picture-in-picture"
-        allowfullscreen>
-      </iframe>
+      <iframe src="https://www.tiktok.com/player/v1/7671687538267999495"
+        title="TikTok video moment 7" loading="lazy"
+        allow="fullscreen; encrypted-media; picture-in-picture" allowfullscreen></iframe>
       <div class="video-info">
         <h3>Moment 07</h3>
         <p>A little moment from @kimdongmoments</p>
-        <a class="video-link"
-           href="https://www.tiktok.com/@kimdongmoments/video/7671687538267999495"
-           target="_blank"
-           rel="noopener noreferrer">WATCH ON TIKTOK ↗</a>
+        <a class="video-link" href="https://www.tiktok.com/@kimdongmoments/video/7671687538267999495" target="_blank" rel="noopener noreferrer">WATCH ON TIKTOK ↗</a>
       </div>
     </div>
 
@@ -1322,9 +1274,7 @@ footer p + p {
   </p>
 
   <div class="fan-grid">
-
     <!-- ADD FAN PHOTOS HERE -->
-
   </div>
 
   <p style="color:#bca993;font-size:12px;margin-top:25px;">
@@ -1353,33 +1303,32 @@ footer p + p {
     <span>— Always supporting you</span>
   </div>
 
-  <a
-    href="https://forms.gle/uPp9XkVFNaRfFdao9"
-    target="_blank"
-    rel="noopener noreferrer"
-    class="letter-button"
-  >
+  <a href="https://forms.gle/uPp9XkVFNaRfFdao9"
+     target="_blank"
+     rel="noopener noreferrer"
+     class="letter-button">
     SEND YOUR LETTER
   </a>
 </section>
 
-<!-- FLOATING YOUTUBE MUSIC PLAYLIST -->
+<!-- FLOATING MP3 MUSIC PLAYLIST -->
 <div class="music-player hidden" id="musicPlayer">
+
   <div class="music-player-label">
     <span>♫ A LITTLE PLAYLIST</span>
     <button class="music-player-close" id="musicPlayerClose" aria-label="Close music player">&times;</button>
   </div>
 
-  <button class="playlist-song" type="button" data-video="JFLLHYWkIxc">
+  <button class="playlist-song" type="button" data-song="cam-on-tinh-yeu">
     <span class="song-number">01</span>
     <span class="song-info">
-      <span class="song-title">Theme Song</span>
-      <span class="song-subtitle">Our little theme song</span>
+      <span class="song-title">Cảm Ơn Tình Yêu</span>
+      <span class="song-subtitle">Kim Tuyến</span>
     </span>
     <span class="song-play-icon">▶</span>
   </button>
 
-  <button class="playlist-song" type="button" data-video="dfeGNIfSyGk">
+  <button class="playlist-song" type="button" data-song="phong-zin-zin">
     <span class="song-number">02</span>
     <span class="song-info">
       <span class="song-title">Phóng Zìn Zìn</span>
@@ -1388,8 +1337,17 @@ footer p + p {
     <span class="song-play-icon">▶</span>
   </button>
 
-  <button class="playlist-song" type="button" data-video="7t00g-TGu8s">
+  <button class="playlist-song" type="button" data-song="phep-mau">
     <span class="song-number">03</span>
+    <span class="song-info">
+      <span class="song-title">Phép Màu</span>
+      <span class="song-subtitle">Đàn Cá Gỗ OST</span>
+    </span>
+    <span class="song-play-icon">▶</span>
+  </button>
+
+  <button class="playlist-song" type="button" data-song="single-mom">
+    <span class="song-number">04</span>
     <span class="song-info">
       <span class="song-title">Single Mom</span>
       <span class="song-subtitle">A little music moment</span>
@@ -1397,14 +1355,28 @@ footer p + p {
     <span class="song-play-icon">▶</span>
   </button>
 
-  <iframe
-    id="youtubeMusic"
-    src=""
-    title="A Little World of Us playlist"
-    allow="autoplay; encrypted-media; picture-in-picture"
-    referrerpolicy="strict-origin-when-cross-origin"
-    allowfullscreen>
-  </iframe>
+  <button class="playlist-song" type="button" data-song="thoi-mien">
+    <span class="song-number">05</span>
+    <span class="song-info">
+      <span class="song-title">Thôi Miên</span>
+      <span class="song-subtitle">A little music moment</span>
+    </span>
+    <span class="song-play-icon">▶</span>
+  </button>
+
+  <button class="playlist-song" type="button" data-song="theme-song">
+    <span class="song-number">06</span>
+    <span class="song-info">
+      <span class="song-title">Theme Song</span>
+      <span class="song-subtitle">Our little theme song</span>
+    </span>
+    <span class="song-play-icon">▶</span>
+  </button>
+
+  <audio id="musicAudio" controls preload="none">
+    Trình duyệt của bạn không hỗ trợ phát nhạc.
+  </audio>
+
 </div>
 
 <button class="music-player-toggle" id="musicPlayerToggle" type="button" aria-expanded="false">
@@ -1474,59 +1446,123 @@ document.addEventListener("keydown", function(event) {
   }
 });
 
-/* YOUTUBE MUSIC PLAYLIST */
+/* MP3 MUSIC PLAYLIST */
+
 const musicPlayer = document.getElementById("musicPlayer");
 const musicPlayerToggle = document.getElementById("musicPlayerToggle");
 const musicPlayerClose = document.getElementById("musicPlayerClose");
-const youtubeMusic = document.getElementById("youtubeMusic");
+const musicAudio = document.getElementById("musicAudio");
+
 const playlistSongs = document.querySelectorAll(".playlist-song");
+
 const musicWelcome = document.getElementById("musicWelcome");
 const musicWelcomePlay = document.getElementById("musicWelcomePlay");
 const musicWelcomeLater = document.getElementById("musicWelcomeLater");
+
 const welcomeNote = document.getElementById("welcomeNote");
 const welcomeNoteButton = document.getElementById("welcomeNoteButton");
 
-// First, dismiss the welcome note and show the music invitation.
+/* MP3 FILE PATHS */
+
+const musicFiles = {
+  "cam-on-tinh-yeu": "music/CAM-ON-TINH-YEU-KIM-TUYEN-MASTERR-_BGV-50_.mp3",
+
+  "phong-zin-zin": "music/PHÓNG ZÌN ZÌN.mp3",
+
+  "phep-mau": "music/Phép Màu (From Đàn Cá Gỗ Original Soundtrack).mp3",
+
+  "single-mom": "music/Single Mom.mp3",
+
+  "thoi-mien": "music/Thôi Miên.mp3",
+
+  "theme-song": "music/theme-song.mp3"
+};
+
+/* PLAY SELECTED SONG */
+
+function playSong(song) {
+  const songId = song.dataset.song;
+  const filePath = musicFiles[songId];
+
+  if (!filePath) return;
+
+  musicAudio.src = filePath;
+  musicAudio.load();
+
+  musicAudio.play().catch(error => {
+    console.log("Please press play to start the music.");
+  });
+
+  playlistSongs.forEach(item => {
+    item.classList.remove("active");
+  });
+
+  song.classList.add("active");
+}
+
+/* WELCOME NOTE */
+
 welcomeNoteButton.addEventListener("click", function() {
   welcomeNote.classList.add("hidden");
   musicWelcome.classList.remove("hidden");
 });
 
-// A user tap starts the first song, respecting browser autoplay restrictions.
+/* START MUSIC */
+
 musicWelcomePlay.addEventListener("click", function() {
   musicWelcome.classList.add("hidden");
   musicPlayer.classList.remove("hidden");
+
   musicPlayerToggle.style.display = "none";
   musicPlayerToggle.setAttribute("aria-expanded", "true");
-  playlistSongs[0].click();
+
+  playSong(playlistSongs[0]);
 });
+
+/* SKIP MUSIC INVITATION */
 
 musicWelcomeLater.addEventListener("click", function() {
   musicWelcome.classList.add("hidden");
 });
 
+/* OPEN PLAYLIST */
+
 musicPlayerToggle.addEventListener("click", function() {
   musicPlayer.classList.remove("hidden");
+
   musicPlayerToggle.style.display = "none";
   musicPlayerToggle.setAttribute("aria-expanded", "true");
 });
 
+/* CHOOSE A SONG */
+
 playlistSongs.forEach(song => {
   song.addEventListener("click", function() {
-    const videoId = this.dataset.video;
-
-    // Replacing the iframe source stops the previous song.
-    youtubeMusic.src = "https://www.youtube.com/embed/" + videoId +
-      "?autoplay=1&controls=1&playsinline=1";
-
-    playlistSongs.forEach(item => item.classList.remove("active"));
-    this.classList.add("active");
+    playSong(this);
   });
 });
 
+/* AUTO PLAY NEXT SONG */
+
+musicAudio.addEventListener("ended", function() {
+  const activeSong = document.querySelector(".playlist-song.active");
+
+  if (!activeSong) return;
+
+  const songs = Array.from(playlistSongs);
+  const currentIndex = songs.indexOf(activeSong);
+  const nextIndex = currentIndex + 1;
+
+  if (nextIndex < songs.length) {
+    playSong(songs[nextIndex]);
+  }
+});
+
+/* CLOSE PLAYLIST - KEEP MUSIC PLAYING */
+
 musicPlayerClose.addEventListener("click", function() {
-  // Minimize the playlist panel; the selected song keeps playing.
   musicPlayer.classList.add("hidden");
+
   musicPlayerToggle.style.display = "block";
   musicPlayerToggle.setAttribute("aria-expanded", "false");
 });
