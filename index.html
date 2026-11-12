@@ -42,7 +42,9 @@ a { color:inherit; }
   background:rgba(18,11,15,.90);
   backdrop-filter:blur(9px);
 }
+
 .welcome-note.hidden { display:none; }
+
 .welcome-note-card {
   width:min(450px,100%);
   padding:38px 30px;
@@ -53,15 +55,18 @@ a { color:inherit; }
   box-shadow:0 15px 50px rgba(0,0,0,.4);
   animation:noteAppear .8s ease both;
 }
+
 @keyframes noteAppear {
   from { opacity:0; transform:translateY(25px) scale(.96); }
   to { opacity:1; transform:translateY(0) scale(1); }
 }
+
 .welcome-note-kicker {
   color:#8a304b;
   font-size:9px;
   letter-spacing:3px;
 }
+
 .welcome-note-card h2 {
   margin:20px 0;
   color:#8a304b;
@@ -69,17 +74,20 @@ a { color:inherit; }
   font-weight:600;
   letter-spacing:2px;
 }
+
 .welcome-note-card p {
   color:#49313a;
   font-size:14px;
   line-height:2;
   margin-top:12px;
 }
+
 .welcome-note-thanks {
   margin-top:22px !important;
   color:#8a304b !important;
   font-weight:600;
 }
+
 .welcome-note-button {
   margin-top:25px;
   padding:12px 30px;
@@ -92,14 +100,10 @@ a { color:inherit; }
   cursor:pointer;
   transition:.3s;
 }
+
 .welcome-note-button:hover {
   background:transparent;
   color:#8a304b;
-}
-@media (max-width:600px) {
-  .welcome-note-card { padding:32px 22px; }
-  .welcome-note-card h2 { font-size:25px; }
-  .welcome-note-card p { font-size:13px; }
 }
 
 /* HEADER */
@@ -443,6 +447,15 @@ section {
   line-height:1.9;
 }
 
+.journey-content a {
+  display:inline-block;
+  margin-top:12px;
+  color:#e8c995;
+  font-size:11px;
+  text-decoration:none;
+  border-bottom:1px solid #806448;
+}
+
 /* VIDEO MOMENTS */
 .video-section {
   background:#21171c;
@@ -450,9 +463,9 @@ section {
 
 .video-grid {
   display:grid;
-  grid-template-columns:repeat(2,minmax(0,1fr));
+  grid-template-columns:repeat(3,minmax(0,1fr));
   gap:22px;
-  max-width:1000px;
+  max-width:1100px;
   margin:auto;
 }
 
@@ -463,27 +476,12 @@ section {
   text-align:left;
 }
 
-.video-cover {
-  min-height:190px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  background:
-    linear-gradient(rgba(23,16,20,.25),rgba(23,16,20,.75)),
-    url("images/couple2.jpg") center/cover no-repeat;
-}
-
-.video-play {
-  width:55px;
-  height:55px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  border:1px solid #e8c995;
-  border-radius:50%;
-  color:#e8c995;
-  font-size:22px;
-  padding-left:4px;
+.video-card iframe {
+  display:block;
+  width:100%;
+  aspect-ratio:9 / 16;
+  border:0;
+  background:#171014;
 }
 
 .video-info { padding:18px 20px 22px; }
@@ -510,6 +508,8 @@ section {
   border-bottom:1px solid #806448;
 }
 
+.video-link:hover { color:white; }
+
 .empty-note {
   color:#bca993;
   font-size:12px;
@@ -529,7 +529,9 @@ section {
   background:rgba(18,11,15,.88);
   backdrop-filter:blur(8px);
 }
+
 .music-welcome.hidden { display:none; }
+
 .music-welcome-card {
   width:min(430px,100%);
   padding:38px 28px;
@@ -538,11 +540,13 @@ section {
   border:1px solid #806448;
   box-shadow:0 18px 60px rgba(0,0,0,.45);
 }
+
 .music-welcome-kicker {
   color:#c9b8a8;
   font-size:9px;
   letter-spacing:2.5px;
 }
+
 .music-welcome-card h2 {
   color:#e8c995;
   font-size:25px;
@@ -550,11 +554,13 @@ section {
   line-height:1.4;
   margin:15px 0 10px;
 }
+
 .music-welcome-card p {
   color:#d8c9bb;
   font-size:12px;
   line-height:1.9;
 }
+
 .music-welcome-play {
   margin-top:24px;
   padding:12px 25px;
@@ -566,10 +572,12 @@ section {
   letter-spacing:1.5px;
   cursor:pointer;
 }
+
 .music-welcome-play:hover {
   background:transparent;
   color:#e8c995;
 }
+
 .music-welcome-later {
   display:block;
   margin:15px auto 0;
@@ -631,11 +639,13 @@ section {
   font-size:12px;
   min-width:18px;
 }
+
 .song-info {
   display:flex;
   flex-direction:column;
   flex:1;
 }
+
 .song-title { color:#e8c995; font-size:11px; }
 .song-subtitle { color:#bca993; font-size:9px; margin-top:2px; }
 .song-play-icon { color:#e8c995; font-size:13px; }
@@ -659,7 +669,9 @@ section {
   background:#e8c995;
   color:#171014;
 }
+
 .music-player.hidden { display:none; }
+
 .music-player-close {
   border:0;
   background:transparent;
@@ -668,6 +680,7 @@ section {
   line-height:1;
   cursor:pointer;
 }
+
 .music-player iframe {
   display:block;
   width:100%;
@@ -763,7 +776,17 @@ footer p + p {
 }
 
 /* MOBILE */
+@media (max-width:900px) {
+  .video-grid {
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+}
+
 @media (max-width:600px) {
+  .welcome-note-card { padding:32px 22px; }
+  .welcome-note-card h2 { font-size:25px; }
+  .welcome-note-card p { font-size:13px; }
+
   header {
     min-height:75vh;
     padding:30px 18px;
@@ -835,8 +858,6 @@ footer p + p {
 
   .journey-content p { font-size:12px; }
 
-  .video-cover { min-height:170px; }
-
   .music-player {
     right:12px;
     bottom:68px;
@@ -858,8 +879,8 @@ footer p + p {
   <div class="welcome-note-card">
     <div class="welcome-note-kicker">A LITTLE WORLD OF US ♡</div>
     <h2>CHÚ Ý!!!</h2>
-    <p> Bạn chuẩn bị tiến vào thế giới ngập tràn tình yêu của 2NĐN. </p>
-    <p> Một khi đã vào là sẽ không có lối ra đâu nhaaaaaaaaa…. </p>
+    <p>Bạn chuẩn bị tiến vào thế giới ngập tràn tình yêu của 2NĐN.</p>
+    <p>Một khi đã vào là sẽ không có lối ra đâu nhaaaaaaaaa….</p>
     <p class="welcome-note-thanks">Thắn kìu 😘</p>
     <button class="welcome-note-button" id="welcomeNoteButton" type="button">I'M READY ♡</button>
   </div>
@@ -875,7 +896,6 @@ footer p + p {
     <button class="music-welcome-later" id="musicWelcomeLater" type="button">Maybe later</button>
   </div>
 </div>
-
 
 <!-- HEADER -->
 <header>
@@ -1066,7 +1086,7 @@ footer p + p {
       <div class="journey-content">
         <h3>Event or Memory Title</h3>
         <p>Write a short description of this special moment.</p>
-        <a href="PASTE-LINK-HERE" target="_blank" rel="noopener noreferrer">VIEW MORE</a>
+        <a href="PASTE-LINK-HERE" target="_blank">VIEW MORE</a>
       </div>
     </div>
     -->
@@ -1098,52 +1118,136 @@ footer p + p {
 
   <div class="video-grid">
 
-    <!-- TIKTOK VIDEO TEMPLATE
-    Copy this card for each new TikTok clip.
-    Replace the TikTok link, title and description.
-
     <div class="video-card">
-      <a href="PASTE-TIKTOK-LINK-HERE"
-         target="_blank"
-         rel="noopener noreferrer"
-         class="video-cover">
-        <span class="video-play">▶</span>
-      </a>
+      <iframe
+        src="https://www.tiktok.com/player/v1/7690790556141767954"
+        title="TikTok video moment 1"
+        loading="lazy"
+        allow="fullscreen; encrypted-media; picture-in-picture"
+        allowfullscreen>
+      </iframe>
       <div class="video-info">
-        <h3>Video Title</h3>
-        <p>Short description or category</p>
+        <h3>Moment 01</h3>
+        <p>A little moment from @kimdongmoments</p>
         <a class="video-link"
-           href="PASTE-TIKTOK-LINK-HERE"
+           href="https://www.tiktok.com/@kimdongmoments/video/7690790556141767954"
            target="_blank"
            rel="noopener noreferrer">WATCH ON TIKTOK ↗</a>
       </div>
     </div>
-    -->
 
     <div class="video-card">
-      <div class="video-cover">
-        <span class="video-play">▶</span>
-      </div>
+      <iframe
+        src="https://www.tiktok.com/player/v1/7682421355555376392"
+        title="TikTok video moment 2"
+        loading="lazy"
+        allow="fullscreen; encrypted-media; picture-in-picture"
+        allowfullscreen>
+      </iframe>
       <div class="video-info">
-        <h3>Our Moments Together</h3>
-        <p>A space for memorable clips of the two</p>
+        <h3>Moment 02</h3>
+        <p>A little moment from @kimdongmoments</p>
+        <a class="video-link"
+           href="https://www.tiktok.com/@kimdongmoments/video/7682421355555376392"
+           target="_blank"
+           rel="noopener noreferrer">WATCH ON TIKTOK ↗</a>
       </div>
     </div>
 
     <div class="video-card">
-      <div class="video-cover">
-        <span class="video-play">▶</span>
-      </div>
+      <iframe
+        src="https://www.tiktok.com/player/v1/7685365769101708551"
+        title="TikTok video moment 3"
+        loading="lazy"
+        allow="fullscreen; encrypted-media; picture-in-picture"
+        allowfullscreen>
+      </iframe>
       <div class="video-info">
-        <h3>Behind the Scenes</h3>
-        <p>Behind-the-scenes moments and little memories</p>
+        <h3>Moment 03</h3>
+        <p>A little moment from @kimdongmoments</p>
+        <a class="video-link"
+           href="https://www.tiktok.com/@kimdongmoments/video/7685365769101708551"
+           target="_blank"
+           rel="noopener noreferrer">WATCH ON TIKTOK ↗</a>
+      </div>
+    </div>
+
+    <div class="video-card">
+      <iframe
+        src="https://www.tiktok.com/player/v1/7676727558334876946"
+        title="TikTok video moment 4"
+        loading="lazy"
+        allow="fullscreen; encrypted-media; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+      <div class="video-info">
+        <h3>Moment 04</h3>
+        <p>A little moment from @kimdongmoments</p>
+        <a class="video-link"
+           href="https://www.tiktok.com/@kimdongmoments/video/7676727558334876946"
+           target="_blank"
+           rel="noopener noreferrer">WATCH ON TIKTOK ↗</a>
+      </div>
+    </div>
+
+    <div class="video-card">
+      <iframe
+        src="https://www.tiktok.com/player/v1/7680059534357974279"
+        title="TikTok video moment 5"
+        loading="lazy"
+        allow="fullscreen; encrypted-media; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+      <div class="video-info">
+        <h3>Moment 05</h3>
+        <p>A little moment from @kimdongmoments</p>
+        <a class="video-link"
+           href="https://www.tiktok.com/@kimdongmoments/video/7680059534357974279"
+           target="_blank"
+           rel="noopener noreferrer">WATCH ON TIKTOK ↗</a>
+      </div>
+    </div>
+
+    <div class="video-card">
+      <iframe
+        src="https://www.tiktok.com/player/v1/7706427589811768594"
+        title="TikTok video moment 6"
+        loading="lazy"
+        allow="fullscreen; encrypted-media; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+      <div class="video-info">
+        <h3>Moment 06</h3>
+        <p>A little moment from @kimdongmoments</p>
+        <a class="video-link"
+           href="https://www.tiktok.com/@kimdongmoments/video/7706427589811768594"
+           target="_blank"
+           rel="noopener noreferrer">WATCH ON TIKTOK ↗</a>
+      </div>
+    </div>
+
+    <div class="video-card">
+      <iframe
+        src="https://www.tiktok.com/player/v1/7671687538267999495"
+        title="TikTok video moment 7"
+        loading="lazy"
+        allow="fullscreen; encrypted-media; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+      <div class="video-info">
+        <h3>Moment 07</h3>
+        <p>A little moment from @kimdongmoments</p>
+        <a class="video-link"
+           href="https://www.tiktok.com/@kimdongmoments/video/7671687538267999495"
+           target="_blank"
+           rel="noopener noreferrer">WATCH ON TIKTOK ↗</a>
       </div>
     </div>
 
   </div>
 
   <p class="empty-note">
-    TikTok moments will be added here. Stay tuned for more!
+    Seven little moments, collected here with love. More memories will be added along the way.
   </p>
 </section>
 
